@@ -1,0 +1,2175 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food in Therapy | Χριστόφορος Παπαφιλίππου - Ψυχοθεραπεία</title>
+    <meta name="description" content="Προσωποκεντρική Ψυχοθεραπεία με τον Χριστόφορο Παπαφιλίππου. Ατομικές συνεδρίες, ομαδικές συναντήσεις Food in Therapy. Παγκράτι & Online.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            --bg: #e4dcc8;
+            --bg-dark: #d8cfb9;
+            --bg-darker: #c9bfa8;
+            --text-primary: #2c2418;
+            --text-secondary: #5a4e3c;
+            --text-light: #8a7e6c;
+            --accent: #8b4f3a;
+            --accent-light: #a6694f;
+            --accent-dark: #6e3c2a;
+            --cream: #f0ebe0;
+            --cream-light: #f7f4ed;
+            --warm-white: #faf8f3;
+            --shadow-sm: 0 2px 8px rgba(44,36,24,0.06);
+            --shadow-md: 0 8px 30px rgba(44,36,24,0.1);
+            --shadow-lg: 0 20px 60px rgba(44,36,24,0.15);
+            --shadow-xl: 0 30px 80px rgba(44,36,24,0.2);
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-xl: 40px;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Manrope', sans-serif;
+            --transition: cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-weight: 400;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+        button { border: none; cursor: pointer; font-family: inherit; }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.92); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        @keyframes gentlePulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.7; }
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes borderGrow {
+            from { width: 0; }
+            to { width: 60px; }
+        }
+        @keyframes rotateIn {
+            from { opacity: 0; transform: rotate(-5deg) scale(0.95); }
+            to { opacity: 1; transform: rotate(0) scale(1); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s var(--transition), transform 0.8s var(--transition);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s var(--transition), transform 0.8s var(--transition);
+        }
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s var(--transition), transform 0.8s var(--transition);
+        }
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.8s var(--transition), transform 0.8s var(--transition);
+        }
+        .reveal-scale.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 16px 0;
+            transition: all 0.5s var(--transition);
+        }
+        .nav.scrolled {
+            background: rgba(228,220,200,0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 10px 0;
+            box-shadow: 0 4px 30px rgba(44,36,24,0.08);
+        }
+        .nav-inner {
+            max-width: 1340px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            cursor: pointer;
+            transition: transform 0.4s var(--transition);
+        }
+        .nav-logo:hover { transform: scale(1.03); }
+        .nav-logo-circle {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(139,79,58,0.3), inset 0 1px 0 rgba(255,255,255,0.15);
+            transition: all 0.4s var(--transition);
+            flex-shrink: 0;
+        }
+        .nav-logo:hover .nav-logo-circle {
+            box-shadow: 0 6px 28px rgba(139,79,58,0.4), inset 0 1px 0 rgba(255,255,255,0.15);
+            transform: rotate(5deg);
+        }
+        .nav-logo-circle svg {
+            width: 26px;
+            height: 26px;
+            fill: var(--cream-light);
+        }
+        .nav-logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+        .nav-logo-title {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+        .nav-logo-subtitle {
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            list-style: none;
+        }
+        .nav-links a {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            position: relative;
+            padding: 6px 0;
+            transition: color 0.3s ease;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--accent);
+            transition: width 0.4s var(--transition);
+        }
+        .nav-links a:hover { color: var(--accent); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--cream-light) !important;
+            background: var(--accent);
+            padding: 12px 28px;
+            border-radius: 50px;
+            transition: all 0.4s var(--transition);
+            box-shadow: 0 4px 15px rgba(139,79,58,0.25);
+        }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139,79,58,0.35);
+        }
+
+        /* Mobile Menu */
+        .nav-burger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+        .nav-burger span {
+            width: 26px;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        .nav-burger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .nav-burger.active span:nth-child(2) { opacity: 0; }
+        .nav-burger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(228,220,200,0.97);
+            backdrop-filter: blur(30px);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+        }
+        .mobile-menu.active { display: flex; }
+        .mobile-menu a {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 500;
+            color: var(--text-primary);
+            transition: color 0.3s ease;
+        }
+        .mobile-menu a:hover { color: var(--accent); }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.35) saturate(0.7);
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(44,36,24,0.7) 0%, rgba(44,36,24,0.3) 50%, rgba(139,79,58,0.15) 100%);
+            z-index: 1;
+        }
+        .hero-grain {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 1340px;
+            margin: 0 auto;
+            padding: 0 40px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .hero-text {
+            max-width: 620px;
+            text-align: right;
+            animation: fadeInRight 1.2s var(--transition) both;
+            animation-delay: 0.3s;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(240,235,224,0.8);
+            margin-bottom: 28px;
+            animation: fadeIn 1s ease both;
+            animation-delay: 0.6s;
+        }
+        .hero-badge-line {
+            width: 40px;
+            height: 1px;
+            background: var(--accent-light);
+        }
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(38px, 5vw, 64px);
+            font-weight: 300;
+            line-height: 1.15;
+            color: var(--cream-light);
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+        }
+        .hero-title em {
+            font-style: italic;
+            color: var(--accent-light);
+            font-weight: 400;
+        }
+        .hero-subtitle {
+            font-family: var(--font-display);
+            font-size: clamp(16px, 2vw, 22px);
+            font-weight: 300;
+            font-style: italic;
+            color: rgba(240,235,224,0.7);
+            margin-bottom: 28px;
+            line-height: 1.5;
+        }
+        .hero-desc {
+            font-size: 15px;
+            color: rgba(240,235,224,0.6);
+            line-height: 1.8;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease both;
+            animation-delay: 1s;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--cream-light);
+            background: var(--accent);
+            padding: 16px 36px;
+            border-radius: 50px;
+            transition: all 0.4s var(--transition);
+            box-shadow: 0 6px 25px rgba(139,79,58,0.3);
+        }
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(139,79,58,0.4);
+        }
+        .btn-primary svg { width: 16px; height: 16px; fill: currentColor; }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--cream-light);
+            padding: 16px 36px;
+            border-radius: 50px;
+            border: 1.5px solid rgba(240,235,224,0.3);
+            transition: all 0.4s var(--transition);
+        }
+        .btn-secondary:hover {
+            background: rgba(240,235,224,0.1);
+            border-color: rgba(240,235,224,0.6);
+            transform: translateY(-2px);
+        }
+
+        /* Floating Decorative Elements */
+        .hero-float-element {
+            position: absolute;
+            z-index: 2;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        .hero-float-1 {
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, rgba(139,79,58,0.15) 0%, transparent 70%);
+            top: 20%;
+            left: 8%;
+            animation-delay: 0s;
+        }
+        .hero-float-2 {
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, rgba(166,105,79,0.12) 0%, transparent 70%);
+            bottom: 25%;
+            left: 15%;
+            animation-delay: 2s;
+        }
+        .hero-float-3 {
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, rgba(139,79,58,0.1) 0%, transparent 70%);
+            top: 35%;
+            right: 5%;
+            animation-delay: 4s;
+        }
+
+        /* Hero scroll indicator */
+        .hero-scroll {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            animation: fadeIn 1.5s ease both;
+            animation-delay: 1.5s;
+        }
+        .hero-scroll span {
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(240,235,224,0.4);
+            font-weight: 500;
+        }
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, rgba(240,235,224,0.4), transparent);
+            animation: gentlePulse 2s ease-in-out infinite;
+        }
+
+        /* ===== SECTION SHARED STYLES ===== */
+        .section { padding: 120px 0; position: relative; }
+        .section-container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .section-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(32px, 4vw, 52px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+        }
+        .section-title em {
+            font-style: italic;
+            color: var(--accent);
+        }
+        .section-subtitle {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            max-width: 580px;
+            font-weight: 300;
+        }
+
+        /* Grain overlay reusable */
+        .grain-overlay {
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about {
+            background: var(--bg);
+            overflow: hidden;
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .about-image-wrap {
+            position: relative;
+        }
+        .about-image-main {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            transition: transform 0.6s var(--transition);
+            position: relative;
+        }
+        .about-image-main:hover { transform: scale(1.02); }
+        .about-image-main img {
+            width: 100%;
+            height: 560px;
+            object-fit: cover;
+            transition: transform 0.8s var(--transition);
+        }
+        .about-image-main:hover img { transform: scale(1.05); }
+        .about-image-accent {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 200px;
+            height: 200px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 4px solid var(--bg);
+            animation: float 5s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+        .about-image-accent img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .about-deco-circle {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+            opacity: 0.2;
+            animation: float 7s ease-in-out infinite;
+        }
+        .about-content .section-subtitle {
+            max-width: 100%;
+            margin-bottom: 24px;
+        }
+        .about-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        .about-quote {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-style: italic;
+            color: var(--accent);
+            line-height: 1.6;
+            padding: 24px 0 24px 24px;
+            border-left: 3px solid var(--accent);
+            margin: 32px 0;
+            position: relative;
+        }
+        .about-credentials {
+            display: flex;
+            gap: 40px;
+            margin-top: 36px;
+            flex-wrap: wrap;
+        }
+        .credential {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .credential-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-sm);
+            flex-shrink: 0;
+        }
+        .credential-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--accent);
+            fill: none;
+            stroke-width: 1.5;
+        }
+        .credential-text {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+        .credential-text strong {
+            display: block;
+            font-weight: 700;
+            color: var(--text-primary);
+            font-size: 14px;
+        }
+
+        /* ===== FOOD IN THERAPY SPECIAL SECTION ===== */
+        .food-section {
+            background: var(--text-primary);
+            color: var(--cream-light);
+            position: relative;
+            overflow: hidden;
+        }
+        .food-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 20% 50%, rgba(139,79,58,0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .food-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .food-content .section-label { color: var(--accent-light); }
+        .food-content .section-title { color: var(--cream-light); }
+        .food-content .section-title em { color: var(--accent-light); }
+        .food-text {
+            font-size: 15px;
+            color: rgba(240,235,224,0.7);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        .food-features {
+            margin-top: 36px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .food-feature {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .food-feature-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(139,79,58,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 20px;
+        }
+        .food-feature-text h4 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--cream-light);
+            margin-bottom: 4px;
+        }
+        .food-feature-text p {
+            font-size: 14px;
+            color: rgba(240,235,224,0.6);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+        .food-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .food-img-card {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            transition: transform 0.5s var(--transition);
+            cursor: pointer;
+        }
+        .food-img-card:hover { transform: translateY(-6px) scale(1.02); }
+        .food-img-card:nth-child(2) { transform: translateY(30px); }
+        .food-img-card:nth-child(2):hover { transform: translateY(24px) scale(1.02); }
+        .food-img-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.6s var(--transition);
+        }
+        .food-img-card:hover img { transform: scale(1.08); }
+
+        /* ===== GROUP SESSIONS SECTION ===== */
+        .group-section {
+            background: var(--cream);
+            overflow: hidden;
+        }
+        .group-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .group-header .section-subtitle {
+            margin: 0 auto;
+        }
+        .group-main {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .group-description {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-weight: 300;
+            margin-bottom: 28px;
+        }
+        .group-includes {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .group-include-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 20px;
+            background: var(--warm-white);
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s var(--transition);
+        }
+        .group-include-item:hover {
+            transform: translateX(6px);
+            box-shadow: var(--shadow-md);
+        }
+        .group-include-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(139,79,58,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 16px;
+        }
+        .group-include-text {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+        .group-image-wrap {
+            position: relative;
+        }
+        .group-image-main {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+        .group-image-main img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .services {
+            background: var(--bg);
+            overflow: hidden;
+        }
+        .services-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .services-header .section-subtitle {
+            margin: 0 auto;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+        .service-card {
+            background: var(--cream);
+            border-radius: var(--radius-md);
+            padding: 40px 36px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s var(--transition);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(44,36,24,0.04);
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--accent);
+            transition: height 0.5s var(--transition);
+            border-radius: 0 0 4px 0;
+        }
+        .service-card:hover::before { height: 100%; }
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: rgba(139,79,58,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            transition: all 0.4s var(--transition);
+        }
+        .service-card:hover .service-icon {
+            background: var(--accent);
+            transform: scale(1.1);
+        }
+        .service-card:hover .service-icon span { filter: brightness(10); }
+        .service-title {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+        .service-includes {
+            font-size: 12px;
+            color: var(--accent);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            margin-bottom: 14px;
+            font-style: italic;
+        }
+        .service-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+        .service-tag {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-light);
+            background: var(--bg);
+            padding: 6px 14px;
+            border-radius: 20px;
+            letter-spacing: 0.02em;
+        }
+
+        /* ===== INDIVIDUAL SESSIONS SECTION ===== */
+        .individual-section {
+            background: var(--cream);
+            overflow: hidden;
+        }
+        .individual-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .individual-image-wrap {
+            position: relative;
+        }
+        .individual-image-main {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+        .individual-image-main img {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+        }
+        .individual-image-badge {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            background: var(--accent);
+            color: var(--cream-light);
+            padding: 14px 24px;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-md);
+            animation: float 5s ease-in-out infinite;
+        }
+        .individual-image-badge span {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .individual-image-badge small {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            opacity: 0.8;
+        }
+
+        /* ===== PILLARS SECTION ===== */
+        .pillars {
+            background: var(--bg);
+            overflow: hidden;
+        }
+        .pillars-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .pillars-header .section-subtitle { margin: 0 auto; }
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .pillar-card {
+            background: var(--cream);
+            border-radius: var(--radius-md);
+            padding: 36px 28px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+        .pillar-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+        .pillar-number {
+            font-family: var(--font-display);
+            font-size: 48px;
+            font-weight: 300;
+            color: rgba(139,79,58,0.15);
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+        .pillar-icon {
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+        .pillar-title {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+        .pillar-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* ===== SPACE / GALLERY SECTION ===== */
+        .space-section {
+            background: var(--cream);
+            overflow: hidden;
+        }
+        .space-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .space-header .section-subtitle { margin: 0 auto; }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+        .gallery-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.5s var(--transition);
+        }
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            transition: transform 0.6s var(--transition);
+        }
+        .gallery-item:hover img { transform: scale(1.06); }
+        .gallery-item::after {
+            content: '⤢';
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(44,36,24,0.6);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item:hover::after { opacity: 1; }
+        .gallery-item.wide { grid-column: span 2; }
+        .gallery-item.wide img { height: 280px; }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(44,36,24,0.95);
+            backdrop-filter: blur(20px);
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            cursor: pointer;
+        }
+        .lightbox.active { display: flex; }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: var(--radius-md);
+            box-shadow: 0 20px 80px rgba(0,0,0,0.5);
+            animation: scaleIn 0.4s var(--transition);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(240,235,224,0.1);
+            color: var(--cream-light);
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .lightbox-close:hover { background: rgba(240,235,224,0.2); }
+
+        /* ===== REVIEWS SECTION ===== */
+        .reviews {
+            background: var(--bg);
+            overflow: hidden;
+        }
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .reviews-header .section-subtitle { margin: 0 auto; }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .review-card {
+            background: var(--cream);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            transition: all 0.5s var(--transition);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+        .review-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+        .review-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+        }
+        .review-score {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .review-score-num {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .review-score-max {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        .review-stars {
+            display: flex;
+            gap: 2px;
+        }
+        .review-stars span {
+            color: var(--accent);
+            font-size: 14px;
+        }
+        .review-text {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-style: italic;
+            color: var(--text-primary);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .review-author {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .review-name {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-primary);
+        }
+        .review-date {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+        .review-meta {
+            font-size: 11px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+        .reviews-source {
+            text-align: center;
+            margin-top: 48px;
+        }
+        .reviews-source a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            padding: 12px 28px;
+            background: var(--cream);
+            border-radius: 50px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s var(--transition);
+        }
+        .reviews-source a:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            color: var(--accent);
+        }
+        .reviews-source img {
+            height: 22px;
+            display: inline-block;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact {
+            background: var(--text-primary);
+            color: var(--cream-light);
+            position: relative;
+            overflow: hidden;
+        }
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(ellipse at 80% 50%, rgba(139,79,58,0.12) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .contact-content .section-label { color: var(--accent-light); }
+        .contact-content .section-title { color: var(--cream-light); }
+        .contact-content .section-title em { color: var(--accent-light); }
+        .contact-desc {
+            font-size: 16px;
+            color: rgba(240,235,224,0.65);
+            line-height: 1.8;
+            margin-bottom: 32px;
+            font-weight: 300;
+        }
+        .contact-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--cream-light);
+            background: var(--accent);
+            padding: 18px 40px;
+            border-radius: 50px;
+            transition: all 0.4s var(--transition);
+            box-shadow: 0 6px 25px rgba(139,79,58,0.3);
+            margin-bottom: 40px;
+        }
+        .contact-cta-btn:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(139,79,58,0.4);
+        }
+        .contact-info-blocks {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+        .contact-info-block h4 {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent-light);
+            margin-bottom: 12px;
+        }
+        .contact-info-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .contact-info-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: rgba(240,235,224,0.7);
+            font-weight: 300;
+        }
+        .contact-info-list li svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--accent-light);
+            fill: none;
+            stroke-width: 1.5;
+            flex-shrink: 0;
+        }
+        .contact-info-list li a {
+            color: rgba(240,235,224,0.7);
+            transition: color 0.3s ease;
+        }
+        .contact-info-list li a:hover { color: var(--accent-light); }
+        .contact-image-wrap {
+            position: relative;
+        }
+        .contact-image {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+        .contact-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+        .contact-schedule-badge {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: rgba(44,36,24,0.8);
+            backdrop-filter: blur(10px);
+            padding: 18px 24px;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-md);
+        }
+        .contact-schedule-badge h5 {
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent-light);
+            margin-bottom: 6px;
+        }
+        .contact-schedule-badge p {
+            font-size: 14px;
+            color: rgba(240,235,224,0.8);
+            font-weight: 500;
+        }
+        .contact-schedule-badge small {
+            font-size: 12px;
+            color: rgba(240,235,224,0.5);
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #1e1a12;
+            padding: 36px 0;
+            text-align: center;
+        }
+        .footer-inner {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .footer-copy {
+            font-size: 13px;
+            color: rgba(240,235,224,0.35);
+        }
+        .footer-credit {
+            font-size: 12px;
+            color: rgba(240,235,224,0.25);
+        }
+        .footer-credit a {
+            color: rgba(240,235,224,0.4);
+            transition: color 0.3s ease;
+        }
+        .footer-credit a:hover { color: var(--accent-light); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .about-grid, .food-grid, .group-main, .individual-grid, .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+            .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+            .services-grid { grid-template-columns: 1fr; }
+            .reviews-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+            .gallery-item.wide { grid-column: span 1; }
+            .gallery-item.wide img { height: 240px; }
+            .about-image-main img { height: 400px; }
+            .individual-image-main img { height: 400px; }
+            .group-image-main img { height: 380px; }
+            .contact-image img { height: 380px; }
+            .food-images { order: -1; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-burger { display: flex; }
+            .section { padding: 80px 0; }
+            .section-container { padding: 0 24px; }
+            .nav-inner { padding: 0 24px; }
+            .hero-content { padding: 0 24px; }
+            .hero-text { text-align: left; }
+            .hero-actions { justify-content: flex-start; }
+            .hero-badge { justify-content: flex-start; }
+            .pillars-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-inner { flex-direction: column; gap: 12px; }
+            .about-image-accent { width: 140px; height: 140px; bottom: -20px; right: -10px; }
+            .food-images { gap: 12px; }
+            .food-img-card img { height: 160px; }
+            .nav-logo-subtitle { display: none; }
+        }
+        @media (max-width: 480px) {
+            .hero-actions { flex-direction: column; align-items: flex-start; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; }
+            .about-credentials { flex-direction: column; gap: 20px; }
+            .review-card { padding: 24px; }
+        }
+
+        /* Smooth image loading */
+        img { opacity: 0; transition: opacity 0.5s ease; }
+        img.loaded { opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-logo" onclick="event.preventDefault(); window.scrollTo({top:0,behavior:'smooth'});">
+                <div class="nav-logo-circle">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                </div>
+                <div class="nav-logo-text">
+                    <span class="nav-logo-title">Food in Therapy</span>
+                    <span class="nav-logo-subtitle">Χριστόφορος Παπαφιλίππου</span>
+                </div>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#hero">Κεντρικη</a></li>
+                <li><a href="#about">Για εμενα</a></li>
+                <li><a href="#group">Ομαδικες συναντησεις</a></li>
+                <li><a href="#individual">Ατομικες συνεδριες</a></li>
+                <li><a href="#contact">Επικοινωνια</a></li>
+                <li><a href="#contact" class="nav-cta">Κλειστε ραντεβου</a></li>
+            </ul>
+
+            <div class="nav-burger" id="burger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#hero" onclick="closeMenu()">Κεντρικη</a>
+        <a href="#about" onclick="closeMenu()">Για εμενα</a>
+        <a href="#group" onclick="closeMenu()">Ομαδικες συναντησεις</a>
+        <a href="#individual" onclick="closeMenu()">Ατομικες συνεδριες</a>
+        <a href="#contact" onclick="closeMenu()">Επικοινωνια</a>
+        <a href="#contact" onclick="closeMenu()" style="color:var(--accent);">Κλειστε ραντεβου</a>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/4.jpg?raw=true" alt="Χωρος θεραπειας" onload="this.classList.add('loaded')">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-grain"></div>
+        <div class="hero-float-element hero-float-1"></div>
+        <div class="hero-float-element hero-float-2"></div>
+        <div class="hero-float-element hero-float-3"></div>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <span class="hero-badge-line"></span>
+                    ΠΡΟΣΩΠΟΚΕΝΤΡΙΚΗ ΨΥΧΟΘΕΡΑΠΕΙΑ
+                </div>
+                <h1 class="hero-title">
+                    Μια Συναντηση<br><em>Αυθεντικοτητας</em><br>και Αποδοχης
+                </h1>
+                <p class="hero-subtitle">
+                    Food in Therapy &mdash; το τραπεζι ως μια ανθρωπινη αφετηρια συναντησης
+                </p>
+                <p class="hero-desc">
+                    Ενας ασφαλης χωρος στο Παγκρατι, οπου η θεραπευτικη σχεση γινεται ο πυρηνας της αλλαγης. Αγκαλιαστε ολα σας τα κομματια σε ενα περιβαλλον πληρους αποδοχης.
+                </p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn-primary">
+                        Κλειστε ραντεβου
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#about" class="btn-secondary">Γνωριστε μας</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about section" id="about">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-image-wrap reveal-left">
+                    <div class="about-deco-circle"></div>
+                    <div class="about-image-main">
+                        <img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/5.jpg?raw=true" alt="Χριστοφορος Παπαφιλιππου" onload="this.classList.add('loaded')">
+                    </div>
+                    <div class="about-image-accent">
+                        <img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/77.jpg?raw=true" alt="Χριστοφορος Παπαφιλιππου" onload="this.classList.add('loaded')">
+                    </div>
+                </div>
+
+                <div class="about-content reveal-right">
+                    <div class="section-label">Για εμενα</div>
+                    <h2 class="section-title">Χριστοφορος<br><em>Παπαφιλιππου</em> (MSc)</h2>
+                    <p class="section-subtitle">Ψυχοθεραπευτης - Συμβουλος Ψυχικης Υγειας</p>
+
+                    <p class="about-text" style="margin-top: 24px;">
+                        Ο Χριστοφορος Παπαφιλιππου ειναι κατοχος μεταπτυχιακου τιτλου στην Προσωποκεντρικη Συμβουλευτικη και Ψυχοθεραπεια απο το University of Strathclyde της Σκωτιας. Διατηρει ιδιωτικο γραφειο στο Παγκρατι, ενω προσφερει τις υπηρεσιες του και διαδικτυακα.
+                    </p>
+
+                    <p class="about-text">
+                        Η προσεγγιση του βασιζεται στη θεωρια του Carl Rogers, οπου η θεραπευτικη σχεση δεν ειναι απλως ενα μεσο, αλλα ο ιδιος ο πυρηνας της αλλαγης. Η θεραπεια ειναι μια ισοτιμη συναντηση οπου ο θεραπευομενος μπορει να φερει ολα του τα κομματια σε ενα περιβαλλον πληρους ασφαλειας, αποδοχης και ενσυναισθησης.
+                    </p>
+
+                    <div class="about-quote">
+                        Η θεραπεια δεν ειναι μια διαδικασια "διορθωσης". Ειναι μια ισοτιμη συναντηση οπου καθε κομματι σας ειναι ευπροσδεκτο.
+                    </div>
+
+                    <p class="about-text">
+                        Με εμπειρια στην υποστηριξη εφηβων και ενηλικων, καθως και εθελοντικη δραση στο Δικτυο "Συν-Υπαρξη", στεκεται διπλα στον ανθρωπο ως συνοδοιπορος. Στοχος του ειναι να δημιουργησει τις καταλληλες συνθηκες ωστε η θεραπευτικη αλλαγη να αναδυθει φυσικα και αυθεντικα απο μεσα σας.
+                    </p>
+
+                    <div class="about-credentials">
+                        <div class="credential">
+                            <div class="credential-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
+                            </div>
+                            <div class="credential-text">
+                                <strong>MSc & Diploma</strong>
+                                University of Strathclyde
+                            </div>
+                        </div>
+                        <div class="credential">
+                            <div class="credential-icon">
+                                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            </div>
+                            <div class="credential-text">
+                                <strong>Δικτυο "Συν-Υπαρξη"</strong>
+                                Εθελοντικη δραση
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOD IN THERAPY SECTION -->
+    <section class="food-section section" id="foodintherapy">
+        <div class="grain-overlay"></div>
+        <div class="section-container">
+            <div class="food-grid">
+                <div class="food-content reveal-left">
+                    <div class="section-label">Food in Therapy</div>
+                    <h2 class="section-title">Μια <em>Ανθρωπινη</em><br>Αφετηρια</h2>
+                    <p class="food-text">
+                        Γιατι το φαγητο εχει θεση στη θεραπεια; Η ιδεα του Food in Therapy γεννηθηκε απο την προσωπικη αναγκη για εκφραση, φροντιδα και συνδεση μεσω της μαγειρικης. Στις ομαδικες συναντησεις του Χριστοφορου, η διαδικασια ξεκινα με σπιτικο φαγητο.
+                    </p>
+
+                    <div class="food-features">
+                        <div class="food-feature reveal">
+                            <div class="food-feature-icon">🤝</div>
+                            <div class="food-feature-text">
+                                <h4>Συνδεση &amp; Εγγυτητα</h4>
+                                <p>Το κοινο τραπεζι ειναι ενας παναρχαιος τοπος μοιρασματος και γελιου. Ενα φυσικο πλαισιο που μειωνει τις αποστασεις.</p>
+                            </div>
+                        </div>
+                        <div class="food-feature reveal" style="transition-delay: 0.15s;">
+                            <div class="food-feature-icon">🍽</div>
+                            <div class="food-feature-text">
+                                <h4>Ανθρωπινη Αφετηρια</h4>
+                                <p>Το γευμα δεν αντικαθιστα τη θεραπεια, αλλα λειτουργει ως ασφαλες πλαισιο που διευκολυνει τον διαλογο.</p>
+                            </div>
+                        </div>
+                        <div class="food-feature reveal" style="transition-delay: 0.3s;">
+                            <div class="food-feature-icon">✨</div>
+                            <div class="food-feature-text">
+                                <h4>Αυθεντικοτητα</h4>
+                                <p>Στο τραπεζι, η παρουσια και η ανθρωπινη επαφη προηγουνται των τεχνικων, επιτρεποντας στον καθενα να ειναι ο εαυτος του.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-images reveal-right">
+                    <div class="food-img-card" onclick="openLightbox(this.querySelector('img').src)">
+                        <img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/88.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')">
+                    </div>
+                    <div class="food-img-card" onclick="openLightbox(this.querySelector('img').src)">
+                        <img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/99.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')">
+                    </div>
+                    <div class="food-img-card" onclick="openLightbox(this.querySelector('img').src)">
+                        <img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/110.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')">
+                    </div>
+                    <div class="food-img-card" onclick="openLightbox(this.querySelector('img').src)">
+                        <img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/130.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GROUP SESSIONS SECTION -->
+    <section class="group-section section" id="group">
+        <div class="section-container">
+            <div class="group-header reveal">
+                <div class="section-label">Ομαδικες συναντησεις</div>
+                <h2 class="section-title">Ομαδικες Θεραπευτικες<br><em>Συναντησεις</em></h2>
+                <p class="section-subtitle">Βιωματικες ομαδες οπου η θεραπευτικη διαδικασια πλαισιωνεται απο ενα κοινο γευμα.</p>
+            </div>
+
+            <div class="group-main">
+                <div class="reveal-left">
+                    <p class="group-description">
+                        Μεσα απο αυτη τη μοναδικη προσεγγιση, η ομαδα μετατρεπεται σε εναν ζωντανο οργανισμο συνδεσης, οπου το "μοιραζεσθαι" στο τραπεζι ανοιγει τον δρομο για το "μοιραζεσθαι" των βιωματων. Η διαδικασια ξεκινα με σπιτικο φαγητο που ετοιμαζει ο Χριστοφορος, δημιουργωντας ενα κλιμα ζεστασιας και αυθεντικοτητας.
+                    </p>
+
+                    <div class="group-includes">
+                        <div class="group-include-item">
+                            <div class="group-include-icon">🍳</div>
+                            <span class="group-include-text">Σπιτικο γευμα ως αφετηρια συνδεσης</span>
+                        </div>
+                        <div class="group-include-item">
+                            <div class="group-include-icon">👥</div>
+                            <span class="group-include-text">Βιωματικη ομαδικη δυναμικη</span>
+                        </div>
+                        <div class="group-include-item">
+                            <div class="group-include-icon">💬</div>
+                            <span class="group-include-text">Ασφαλες πλαισιο διαλογου</span>
+                        </div>
+                        <div class="group-include-item">
+                            <div class="group-include-icon">🌱</div>
+                            <span class="group-include-text">Συλλογικη αναπτυξη και θεραπεια</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group-image-wrap reveal-right">
+                    <div class="group-image-main">
+                        <img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/2.jpg?raw=true" alt="Ομαδικες συναντησεις" onload="this.classList.add('loaded')">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services section" id="services">
+        <div class="section-container">
+            <div class="services-header reveal">
+                <div class="section-label">Υπηρεσιες</div>
+                <h2 class="section-title">Πως Μπορουμε<br>να <em>Βοηθησουμε</em></h2>
+                <p class="section-subtitle">Ολοκληρωμενη υποστηριξη προσαρμοσμενη στις δικες σας αναγκες.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card reveal" style="transition-delay: 0s;">
+                    <div class="service-icon"><span>🧠</span></div>
+                    <h3 class="service-title">Ατομικη Προσωποκεντρικη Ψυχοθεραπεια</h3>
+                    <p class="service-includes">Ενηλικες &amp; Εφηβοι &bull; Αγχος &bull; Στρες &bull; Θλιψη &bull; Burnout</p>
+                    <p class="service-desc">
+                        Στις ατομικες συνεδριες (60 λεπτων), ο θεραπευομενος διερευνα τις σκεψεις και τα συναισθηματα του με τον δικο του ρυθμο. Η προσεγγιση ειναι μη-κατευθυντικη, προσφεροντας υποστηριξη με στοχο να ακουσετε πιο καθαρα την εσωτερικη σας φωνη.
+                    </p>
+                    <div class="service-tags">
+                        <span class="service-tag">Συνεδρια 60'</span>
+                        <span class="service-tag">Αυτογνωσια</span>
+                        <span class="service-tag">Ανθεκτικοτητα</span>
+                    </div>
+                </div>
+
+                <div class="service-card reveal" style="transition-delay: 0.1s;">
+                    <div class="service-icon"><span>🛡</span></div>
+                    <h3 class="service-title">Διαχειριση Τραυματος &amp; Κρισεων</h3>
+                    <p class="service-includes">Κρισεις πανικου &bull; Φοβιες &bull; Ψυχοσωματικα &bull; Θυμος</p>
+                    <p class="service-desc">
+                        Ειδικες συνεδριες για την αντιμετωπιση βαθυτερων δυσκολιων. Η θεραπεια στηριζεται στη σταθερη παρουσια του θεραπευτη, η οποια βοηθα στην επεξεργασια του τραυματος και στην εξισορροπηση των εντονων συναισθηματων μεσα απο τη σχεση αποδοχης.
+                    </p>
+                    <div class="service-tags">
+                        <span class="service-tag">Φοβος &amp; Πανικος</span>
+                        <span class="service-tag">Τραυμα</span>
+                        <span class="service-tag">Ψυχοσωματικα</span>
+                    </div>
+                </div>
+
+                <div class="service-card reveal" style="transition-delay: 0.2s;">
+                    <div class="service-icon"><span>🍽</span></div>
+                    <h3 class="service-title">Ομαδικες Συναντησεις (Food in Therapy)</h3>
+                    <p class="service-includes">Ομαδες ενηλικων &bull; Κοινο γευμα &bull; Βιωματικη δυναμικη</p>
+                    <p class="service-desc">
+                        Βιωματικες ομαδες οπου η θεραπευτικη διαδικασια πλαισιωνεται απο ενα κοινο γευμα. Η ομαδα μετατρεπεται σε εναν ζωντανο οργανισμο συνδεσης, οπου το "μοιραζεσθαι" στο τραπεζι ανοιγει τον δρομο για το "μοιραζεσθαι" των βιωματων.
+                    </p>
+                    <div class="service-tags">
+                        <span class="service-tag">Group Therapy</span>
+                        <span class="service-tag">Σπιτικο γευμα</span>
+                    </div>
+                </div>
+
+                <div class="service-card reveal" style="transition-delay: 0.3s;">
+                    <div class="service-icon"><span>💻</span></div>
+                    <h3 class="service-title">Προσβασιμοτητα &amp; Online Υπηρεσιες</h3>
+                    <p class="service-includes">Βιντεοκληση &bull; Ειδικο κοστος &bull; Φοιτητες &bull; Ανεργοι &bull; ΑΜΕΑ</p>
+                    <p class="service-desc">
+                        Πιστευοντας στη συμπεριληψη, παρεχεται η δυνατοτητα για διαδικτυακες συνεδριες, ενω διατηρειται ειδικο κοστος επισκεψης για φοιτητες, ανεργους και ΑΜΕΑ.
+                    </p>
+                    <div class="service-tags">
+                        <span class="service-tag">Online</span>
+                        <span class="service-tag">Ειδικη τιμολογηση</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INDIVIDUAL SESSIONS SECTION -->
+    <section class="individual-section section" id="individual">
+        <div class="section-container">
+            <div class="individual-grid">
+                <div class="individual-image-wrap reveal-left">
+                    <div class="individual-image-main">
+                        <img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/220.jpg?raw=true" alt="Ατομικες συνεδριες" onload="this.classList.add('loaded')">
+                    </div>
+                    <div class="individual-image-badge">
+                        <span>60'</span>
+                        <small>Διαρκεια συνεδριας</small>
+                    </div>
+                </div>
+
+                <div class="reveal-right">
+                    <div class="section-label">Ατομικες συνεδριες</div>
+                    <h2 class="section-title">Η Πρωτη Γνωριμια<br>ειναι <em>Δωρεαν</em></h2>
+                    <p class="section-subtitle" style="margin-bottom: 24px;">
+                        Η πρωτη συναντηση προσφερεται δωρεαν, δινοντας τον χωρο να δειτε εαν αυτος ο ιδιαιτερος τροπος δουλειας σας ταιριαζει.
+                    </p>
+                    <p class="about-text">
+                        Στις ατομικες συνεδριες, δεν υπαρχουν συνταγες ουτε ετοιμες λυσεις. Υπαρχει ενας χωρος οπου μπορειτε να ειστε πληρως ο εαυτος σας&mdash;χωρις κριτικη, χωρις πιεση. Η αλλαγη αναδυεται φυσικα, οταν νιωσετε οτι σας ακουνε αληθινα.
+                    </p>
+                    <p class="about-text">
+                        Η θεραπεια δεν βασιζεται στην "αυθεντια", αλλα στη συναντηση δυο ανθρωπων σε ενα πλαισιο αυθεντικοτητας. Πιστη στη φυσικη ταση του ανθρωπου για αναπτυξη, οταν του προσφερθουν οι καταλληλες συνθηκες ασφαλειας.
+                    </p>
+                    <a href="#contact" class="btn-primary" style="margin-top: 24px; background: var(--accent); color: var(--cream-light);">
+                        Κλειστε δωρεαν γνωριμια
+                        <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PILLARS SECTION -->
+    <section class="pillars section">
+        <div class="section-container">
+            <div class="pillars-header reveal">
+                <div class="section-label">Η βαση</div>
+                <h2 class="section-title">Οι 4 <em>Πυλωνες</em> της Προσεγγισης</h2>
+                <p class="section-subtitle">Αυτο που κανει αυτη τη θεραπευτικη σχεση μοναδικη.</p>
+            </div>
+
+            <div class="pillars-grid">
+                <div class="pillar-card reveal" style="transition-delay: 0s;">
+                    <div class="pillar-number">01</div>
+                    <div class="pillar-icon">🎓</div>
+                    <h3 class="pillar-title">Διεθνης Ακαδημαικη Εγγυηση</h3>
+                    <p class="pillar-desc">Κατοχος MSc και Diploma απο το University of Strathclyde, εναν απο τους κορυφαιους φορεις στην Προσωποκεντρικη προσεγγιση παγκοσμιως.</p>
+                </div>
+
+                <div class="pillar-card reveal" style="transition-delay: 0.1s;">
+                    <div class="pillar-number">02</div>
+                    <div class="pillar-icon">🤝</div>
+                    <h3 class="pillar-title">Σχεση Ισοτητας</h3>
+                    <p class="pillar-desc">Η θεραπεια δεν βασιζεται στην "αυθεντια", αλλα στη συναντηση δυο ανθρωπων σε ενα πλαισιο αυθεντικοτητας.</p>
+                </div>
+
+                <div class="pillar-card reveal" style="transition-delay: 0.2s;">
+                    <div class="pillar-number">03</div>
+                    <div class="pillar-icon">💡</div>
+                    <h3 class="pillar-title">Αλλαγη εκ των Εσω</h3>
+                    <p class="pillar-desc">Πιστη στη φυσικη ταση του ανθρωπου για αναπτυξη, οταν του προσφερθουν οι καταλληλες συνθηκες ασφαλειας.</p>
+                </div>
+
+                <div class="pillar-card reveal" style="transition-delay: 0.3s;">
+                    <div class="pillar-number">04</div>
+                    <div class="pillar-icon">🆓</div>
+                    <h3 class="pillar-title">Πρωτη Γνωριμια Δωρεαν</h3>
+                    <p class="pillar-desc">Η πρωτη συναντηση προσφερεται δωρεαν, δινοντας τον χωρο να δειτε εαν αυτος ο τροπος δουλειας σας ταιριαζει.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPACE / GALLERY SECTION -->
+    <section class="space-section section" id="space">
+        <div class="section-container">
+            <div class="space-header reveal">
+                <div class="section-label">Ο χωρος &amp; οι στιγμες</div>
+                <h2 class="section-title">Ενα Περιβαλλον <em>Ζεστασιας</em></h2>
+                <p class="section-subtitle">Εικονες απο τον χωρο μας και τις ομαδικες μας στιγμες. Πατηστε σε καθε εικονα για να τη δειτε σε πληρες μεγεθος.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item wide reveal-scale" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/3.jpg?raw=true" alt="Χωρος θεραπειας" onload="this.classList.add('loaded')">
+                </div>
+                <div class="gallery-item reveal-scale" style="transition-delay:0.1s" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/66.jpg?raw=true" alt="Χωρος θεραπειας" onload="this.classList.add('loaded')">
+                </div>
+                <div class="gallery-item reveal-scale" style="transition-delay:0.15s" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/120.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')">
+                </div>
+                <div class="gallery-item reveal-scale" style="transition-delay:0.05s" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/140.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')">
+                </div>
+                <div class="gallery-item reveal-scale" style="transition-delay:0.1s" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/150.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')">
+                </div>
+                <div class="gallery-item wide reveal-scale" style="transition-delay:0.15s" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/160.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')">
+                </div>
+                <div class="gallery-item reveal-scale" style="transition-delay:0.2s" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/170.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')">
+                </div>
+                <div class="gallery-item reveal-scale" style="transition-delay:0.25s" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/180.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')">
+                </div>
+                <div class="gallery-item reveal-scale" style="transition-delay:0.05s" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/190.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')">
+                </div>
+                <div class="gallery-item reveal-scale" style="transition-delay:0.1s" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/200.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')">
+                </div>
+                <div class="gallery-item reveal-scale" style="transition-delay:0.15s" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/210.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')">
+                </div>
+                <div class="gallery-item reveal-scale" style="transition-delay:0.2s" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/230.jpg?raw=true" alt="Χριστοφορος Παπαφιλιππου" onload="this.classList.add('loaded')">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS SECTION -->
+    <section class="reviews section" id="reviews">
+        <div class="section-container">
+            <div class="reviews-header reveal">
+                <div class="section-label">Εμπειριες</div>
+                <h2 class="section-title">Η <em>Εμπιστοσυνη</em> σας Μιλαει</h2>
+                <p class="section-subtitle">Αυθεντικες αξιολογησεις απο ανθρωπους που εμπιστευτηκαν τον Χριστοφορο.</p>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-card reveal" style="transition-delay: 0s;">
+                    <div class="review-top">
+                        <div class="review-score">
+                            <span class="review-score-num">10.0</span>
+                            <span class="review-score-max">/ 10</span>
+                        </div>
+                        <div class="review-stars">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        "Εξαιρετικος επαγγελματιας! Με ακουσε με πραγματικο ενδιαφερον και διερευνησε σε βαθος την περιπτωση μου, χωρις βιασυνη. Μου ενεπνευσε εμπιστοσυνη απο την πρωτη στιγμη."
+                    </p>
+                    <div class="review-author">
+                        <div>
+                            <div class="review-name">Maria</div>
+                            <div class="review-meta">1 αξιολογηση</div>
+                        </div>
+                        <span class="review-date">14 Οκτωβριου 2025</span>
+                    </div>
+                </div>
+
+                <div class="review-card reveal" style="transition-delay: 0.1s;">
+                    <div class="review-top">
+                        <div class="review-score">
+                            <span class="review-score-num">10.0</span>
+                            <span class="review-score-max">/ 10</span>
+                        </div>
+                        <div class="review-stars">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        "Ο Χριστοφορος ειναι ενας εμπειρος ψυχολογος με μεγαλη κατανοηση. Με βοηθαει τα τελευταια 5 χρονια να ξεπερασω δυσκολιες, δημιουργωντας ενα ασφαλες και υποστηρικτικο περιβαλλον."
+                    </p>
+                    <div class="review-author">
+                        <div>
+                            <div class="review-name">Timo</div>
+                            <div class="review-meta">1 αξιολογηση</div>
+                        </div>
+                        <span class="review-date">12 Οκτωβριου 2025</span>
+                    </div>
+                </div>
+
+                <div class="review-card reveal" style="transition-delay: 0.2s;">
+                    <div class="review-top">
+                        <div class="review-score">
+                            <span class="review-score-num">10.0</span>
+                            <span class="review-score-max">/ 10</span>
+                        </div>
+                        <div class="review-stars">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        "Εξαιρετικος επαγγελματιας, με κατανοηση, ενσυναισθηση και ουσιαστικη στηριξη."
+                    </p>
+                    <div class="review-author">
+                        <div>
+                            <div class="review-name">Ioanna</div>
+                            <div class="review-meta">1 αξιολογηση</div>
+                        </div>
+                        <span class="review-date">10 Οκτωβριου 2025</span>
+                    </div>
+                </div>
+
+                <div class="review-card reveal" style="transition-delay: 0.05s;">
+                    <div class="review-top">
+                        <div class="review-score">
+                            <span class="review-score-num">10.0</span>
+                            <span class="review-score-max">/ 10</span>
+                        </div>
+                        <div class="review-stars">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        "Με βοηθησε παρα πολυ με το αγχος μου και με τη διαχειριση του. Με βοηθησε να ξεπερασω κρισεις πανικου και αγχους, καθως και να εχω μια βελτιωμενη εικονα στην καθημερινοτητα μου."
+                    </p>
+                    <div class="review-author">
+                        <div>
+                            <div class="review-name">Στελλα</div>
+                            <div class="review-meta">1 αξιολογηση</div>
+                        </div>
+                        <span class="review-date">10 Οκτωβριου 2025</span>
+                    </div>
+                </div>
+
+                <div class="review-card reveal" style="transition-delay: 0.15s;">
+                    <div class="review-top">
+                        <div class="review-score">
+                            <span class="review-score-num">10.0</span>
+                            <span class="review-score-max">/ 10</span>
+                        </div>
+                        <div class="review-stars">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        "Πολυ καλος επαγγελματιας που εμπνεει εμπιστοσυνη. Προς το παρον πηγαινω εδω και 1 χρονο και ειμαι 100% ικανοποιημενος."
+                    </p>
+                    <div class="review-author">
+                        <div>
+                            <div class="review-name">Michalis</div>
+                            <div class="review-meta">1 αξιολογηση</div>
+                        </div>
+                        <span class="review-date">10 Οκτωβριου 2025</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reviews-source reveal">
+                <a href="https://www.doctoranytime.gr/d/Symvoulos-psychikis-ygeias/papafilippou-xristoforos" target="_blank" rel="noopener">
+                    Διαβαστε περισσοτερα στο
+                    <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" alt="Doctoranytime" style="opacity:1;">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact section" id="contact">
+        <div class="grain-overlay"></div>
+        <div class="section-container">
+            <div class="contact-grid">
+                <div class="contact-content reveal-left">
+                    <div class="section-label">Επικοινωνια</div>
+                    <h2 class="section-title">Το Πρωτο <em>Βημα</em><br>Ξεκιναει Εδω</h2>
+                    <p class="contact-desc">
+                        Η πρωτη γνωριμια ειναι δωρεαν. Επικοινωνηστε μαζι μας για να ορισουμε τη συναντηση σας σε ενα περιβαλλον απολυτης αποδοχης.
+                    </p>
+                    <a href="tel:+306997170432" class="contact-cta-btn">
+                        📞 Κλειστε ραντεβου
+                    </a>
+
+                    <div class="contact-info-blocks">
+                        <div class="contact-info-block">
+                            <h4>ΣΤΟΙΧΕΙΑ ΕΠΙΚΟΙΝΩΝΙΑΣ</h4>
+                            <ul class="contact-info-list">
+                                <li>
+                                    <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                    Γραφειο: Μαρκου Μουσουρου 91, Μετς
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                    Σπιτι: Προαιρεσιου 15, Παγκρατι
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                    <a href="tel:+306997170432">+30 699 717 0432</a>
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                    <a href="mailto:papafilippouc@gmail.com">papafilippouc@gmail.com</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="contact-info-block">
+                            <h4>ΩΡΑΡΙΟ ΛΕΙΤΟΥΡΓΙΑΣ</h4>
+                            <ul class="contact-info-list">
+                                <li>
+                                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                    ΔΕΥΤΕΡΑ - ΣΑΒΒΑΤΟ
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                    Κατοπιν ραντεβου
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="contact-info-block">
+                            <h4>ΒΡΕΙΤΕ ΜΑΣ ONLINE</h4>
+                            <ul class="contact-info-list">
+                                <li>
+                                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                                    <a href="https://www.doctoranytime.gr/d/Symvoulos-psychikis-ygeias/papafilippou-xristoforos" target="_blank" rel="noopener">Doctoranytime προφιλ</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-image-wrap reveal-right">
+                    <div class="contact-image">
+                        <img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/230.jpg?raw=true" alt="Χριστοφορος Παπαφιλιππου" onload="this.classList.add('loaded')">
+                    </div>
+                    <div class="contact-schedule-badge">
+                        <h5>ΩΡΑΡΙΟ</h5>
+                        <p>Δευτερα - Σαββατο</p>
+                        <small>Κατοπιν ραντεβου</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <span class="footer-copy">&copy; 2026 Food in Therapy &mdash; Χριστοφορος Παπαφιλιππου. Ολα τα δικαιωματα διατηρουνται.</span>
+            <span class="footer-credit">Designed by <a href="https://advonmedia.com" target="_blank" rel="noopener">Advon Media</a></span>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-close" onclick="closeLightbox()">&times;</div>
+        <img src="" alt="Full size" id="lightboxImg" onload="this.classList.add('loaded')">
+    </div>
+
+    <script>
+        // === Nav scroll effect ===
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // === Mobile Menu ===
+        function toggleMenu() {
+            document.getElementById('burger').classList.toggle('active');
+            document.getElementById('mobileMenu').classList.toggle('active');
+            document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('active') ? 'hidden' : '';
+        }
+        function closeMenu() {
+            document.getElementById('burger').classList.remove('active');
+            document.getElementById('mobileMenu').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // === Scroll Reveal ===
+        const observerOptions = { threshold: 0.12, rootMargin: '0px 0px -40px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+            observer.observe(el);
+        });
+
+        // === Lightbox ===
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            const img = document.getElementById('lightboxImg');
+            img.classList.remove('loaded');
+            img.src = src;
+            lb.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        // === Smooth image load ===
+        document.querySelectorAll('img').forEach(img => {
+            if (img.complete) img.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>

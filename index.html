@@ -68,13 +68,13 @@
         .nav-logo-circle svg { width: 26px; height: 26px; fill: none; stroke: var(--cream-light); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
         .nav-logo-text { display: flex; flex-direction: column; line-height: 1.2; }
         .nav-logo-title { font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--text-primary); letter-spacing: -0.02em; }
-        .nav-logo-subtitle { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-light); font-weight: 500; }
+        .nav-logo-subtitle { font-size: 10px; letter-spacing: 0.15em; color: var(--text-light); font-weight: 500; }
         .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-        .nav-links a { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); position: relative; padding: 6px 0; transition: color 0.3s ease; }
+        .nav-links a { font-size: 13px; font-weight: 600; letter-spacing: 0.05em; color: var(--text-secondary); position: relative; padding: 6px 0; transition: color 0.3s ease; }
         .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1.5px; background: var(--accent); transition: width 0.4s var(--transition); }
         .nav-links a:hover { color: var(--accent); }
         .nav-links a:hover::after { width: 100%; }
-        .nav-cta { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream-light) !important; background: var(--accent); padding: 14px 40px; border-radius: 50px; transition: all 0.4s var(--transition); box-shadow: 0 4px 15px rgba(139,79,58,0.25); white-space: nowrap; }
+        .nav-cta { font-size: 13px; font-weight: 600; letter-spacing: 0.05em; color: var(--cream-light) !important; background: var(--accent); padding: 14px 30px; border-radius: 50px; transition: all 0.4s var(--transition); box-shadow: 0 4px 15px rgba(139,79,58,0.25); text-align: center; }
         .nav-cta::after { display: none !important; }
         .nav-cta:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(139,79,58,0.35); }
         .nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; z-index: 1001; }
@@ -95,34 +95,37 @@
         .hero-grain { position: absolute; inset: 0; z-index: 2; opacity: 0.04; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); pointer-events: none; }
         .hero-content { position: relative; z-index: 3; max-width: 1340px; margin: 0 auto; padding: 0 40px; width: 100%; display: flex; justify-content: flex-end; }
         .hero-text { max-width: 620px; text-align: right; animation: fadeInRight 1.2s var(--transition) both; animation-delay: 0.3s; }
-        .hero-badge { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(240,235,224,0.8); margin-bottom: 28px; animation: fadeIn 1s ease both; animation-delay: 0.6s; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; color: rgba(240,235,224,0.8); margin-bottom: 28px; animation: fadeIn 1s ease both; animation-delay: 0.6s; }
         .hero-badge-line { width: 40px; height: 1px; background: var(--accent-light); }
         .hero-title { font-family: var(--font-display); font-size: clamp(38px, 5vw, 64px); font-weight: 300; line-height: 1.15; color: var(--cream-light); margin-bottom: 20px; }
         .hero-title em { font-style: italic; color: var(--accent-light); font-weight: 400; }
         .hero-subtitle { font-family: var(--font-display); font-size: clamp(16px, 2vw, 22px); font-weight: 300; font-style: italic; color: rgba(240,235,224,0.7); margin-bottom: 28px; line-height: 1.5; }
-        .hero-desc { font-size: 15px; color: rgba(240,235,224,0.6); line-height: 1.8; margin-bottom: 40px; font-weight: 300; }
+        .hero-desc { font-size: 16px; color: rgba(240,235,224,0.6); line-height: 1.8; margin-bottom: 40px; font-weight: 300; }
         .hero-actions { display: flex; gap: 16px; justify-content: flex-end; flex-wrap: wrap; animation: fadeInUp 1s ease both; animation-delay: 1s; }
-        .btn-primary { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream-light); background: var(--accent); padding: 16px 36px; border-radius: 50px; transition: all 0.4s var(--transition); box-shadow: 0 6px 25px rgba(139,79,58,0.3); }
+        .btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; color: var(--cream-light); background: var(--accent); padding: 16px 36px; border-radius: 50px; transition: all 0.4s var(--transition); box-shadow: 0 6px 25px rgba(139,79,58,0.3); text-align: center; }
         .btn-primary:hover { background: var(--accent-dark); transform: translateY(-3px); box-shadow: 0 12px 35px rgba(139,79,58,0.4); }
         .btn-primary svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-        .btn-secondary { display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream-light); padding: 16px 36px; border-radius: 50px; border: 1.5px solid rgba(240,235,224,0.3); transition: all 0.4s var(--transition); }
+        .btn-secondary { display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; color: var(--cream-light); padding: 16px 36px; border-radius: 50px; border: 1.5px solid rgba(240,235,224,0.3); transition: all 0.4s var(--transition); text-align: center; }
         .btn-secondary:hover { background: rgba(240,235,224,0.1); border-color: rgba(240,235,224,0.6); transform: translateY(-2px); }
         .hero-float-element { position: absolute; z-index: 2; border-radius: 50%; animation: float 6s ease-in-out infinite; }
         .hero-float-1 { width: 120px; height: 120px; background: radial-gradient(circle, rgba(139,79,58,0.15) 0%, transparent 70%); top: 20%; left: 8%; }
         .hero-float-2 { width: 80px; height: 80px; background: radial-gradient(circle, rgba(166,105,79,0.12) 0%, transparent 70%); bottom: 25%; left: 15%; animation-delay: 2s; }
         .hero-float-3 { width: 60px; height: 60px; background: radial-gradient(circle, rgba(139,79,58,0.1) 0%, transparent 70%); top: 35%; right: 5%; animation-delay: 4s; }
         .hero-scroll { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 8px; animation: fadeIn 1.5s ease both; animation-delay: 1.5s; }
-        .hero-scroll span { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(240,235,224,0.4); font-weight: 500; }
+        .hero-scroll span { font-size: 11px; letter-spacing: 0.1em; color: rgba(240,235,224,0.4); font-weight: 500; }
         .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, rgba(240,235,224,0.4), transparent); animation: gentlePulse 2s ease-in-out infinite; }
 
         /* SECTIONS */
         .section { padding: 120px 0; position: relative; }
         .section-container { max-width: 1240px; margin: 0 auto; padding: 0 40px; }
-        .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+        .section-label { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 12px; }
         .section-title { font-family: var(--font-display); font-size: clamp(32px, 4vw, 52px); font-weight: 400; line-height: 1.2; color: var(--text-primary); margin-bottom: 20px; }
         .section-title em { font-style: italic; color: var(--accent); }
         .section-subtitle { font-size: 16px; color: var(--text-secondary); line-height: 1.7; max-width: 580px; font-weight: 300; }
         .grain-overlay { position: absolute; inset: 0; opacity: 0.03; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); pointer-events: none; }
+        
+        /* COST BADGE */
+        .cost-badge { display: inline-flex; align-items: center; background: var(--accent); color: var(--cream-light); padding: 12px 24px; border-radius: var(--radius-sm); font-weight: 600; font-size: 15px; box-shadow: var(--shadow-sm); margin: 24px 0; }
 
         /* ABOUT */
         .about { background: var(--bg); overflow: hidden; }
@@ -136,8 +139,7 @@
         .about-image-accent img { width: 100%; height: 100%; object-fit: cover; }
         .about-deco-circle { position: absolute; top: -20px; left: -20px; width: 100px; height: 100px; border-radius: 50%; border: 2px solid var(--accent); opacity: 0.2; animation: float 7s ease-in-out infinite; }
         .about-content .section-subtitle { max-width: 100%; margin-bottom: 24px; }
-        .about-text { font-size: 15px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px; font-weight: 300; }
-        .about-quote { font-family: var(--font-display); font-size: 20px; font-style: italic; color: var(--accent); line-height: 1.6; padding: 24px 0 24px 24px; border-left: 3px solid var(--accent); margin: 32px 0; }
+        .about-text { font-size: 16px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px; font-weight: 300; }
         .about-credentials { display: flex; gap: 40px; margin-top: 36px; flex-wrap: wrap; }
         .credential { display: flex; align-items: center; gap: 14px; }
         .credential-icon { width: 48px; height: 48px; border-radius: 50%; background: var(--cream); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm); flex-shrink: 0; }
@@ -152,19 +154,20 @@
         .food-content .section-label { color: var(--accent-light); }
         .food-content .section-title { color: var(--cream-light); }
         .food-content .section-title em { color: var(--accent-light); }
-        .food-text { font-size: 15px; color: rgba(240,235,224,0.7); line-height: 1.8; margin-bottom: 20px; font-weight: 300; }
+        .food-text { font-size: 16px; color: rgba(240,235,224,0.7); line-height: 1.8; margin-bottom: 20px; font-weight: 300; }
         .food-features { margin-top: 36px; display: flex; flex-direction: column; gap: 24px; }
         .food-feature { display: flex; gap: 16px; align-items: flex-start; }
         .food-feature-icon { width: 44px; height: 44px; border-radius: 50%; background: rgba(139,79,58,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .food-feature-icon svg { width: 20px; height: 20px; stroke: var(--accent-light); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
         .food-feature-text h4 { font-family: var(--font-display); font-size: 18px; font-weight: 500; color: var(--cream-light); margin-bottom: 4px; }
-        .food-feature-text p { font-size: 14px; color: rgba(240,235,224,0.6); line-height: 1.6; font-weight: 300; }
-        .food-images { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .food-feature-text p { font-size: 15px; color: rgba(240,235,224,0.6); line-height: 1.6; font-weight: 300; }
+        .food-images { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
         .food-img-card { border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.3); transition: transform 0.5s var(--transition); cursor: pointer; }
         .food-img-card:hover { transform: translateY(-6px) scale(1.02); }
-        .food-img-card:nth-child(2) { transform: translateY(30px); }
-        .food-img-card:nth-child(2):hover { transform: translateY(24px) scale(1.02); }
-        .food-img-card img { width: 100%; height: 220px; object-fit: cover; transition: transform 0.6s var(--transition); }
+        /* Browser Bug Fix for Firefox overlaps: push both even children down */
+        .food-img-card:nth-child(even) { transform: translateY(30px); }
+        .food-img-card:nth-child(even):hover { transform: translateY(24px) scale(1.02); }
+        .food-img-card img { width: 100%; height: 240px; object-fit: cover; transition: transform 0.6s var(--transition); }
         .food-img-card:hover img { transform: scale(1.08); }
 
         /* GROUP */
@@ -172,13 +175,13 @@
         .group-header { text-align: center; margin-bottom: 60px; }
         .group-header .section-subtitle { margin: 0 auto; }
         .group-main { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; }
-        .group-description { font-size: 16px; color: var(--text-secondary); line-height: 1.8; font-weight: 300; margin-bottom: 28px; }
-        .group-includes { display: flex; flex-direction: column; gap: 16px; }
+        .group-description { font-size: 16px; color: var(--text-secondary); line-height: 1.8; font-weight: 300; margin-bottom: 12px; }
+        .group-includes { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
         .group-include-item { display: flex; align-items: center; gap: 14px; padding: 16px 20px; background: var(--warm-white); border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); transition: all 0.3s var(--transition); }
         .group-include-item:hover { transform: translateX(6px); box-shadow: var(--shadow-md); }
         .group-include-icon { width: 36px; height: 36px; border-radius: 50%; background: rgba(139,79,58,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .group-include-icon svg { width: 16px; height: 16px; stroke: var(--accent); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-        .group-include-text { font-size: 14px; font-weight: 500; color: var(--text-primary); }
+        .group-include-text { font-size: 15px; font-weight: 500; color: var(--text-primary); }
         .group-image-main { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-xl); }
         .group-image-main img { width: 100%; height: 480px; object-fit: cover; }
 
@@ -195,11 +198,11 @@
         .service-icon svg { width: 24px; height: 24px; stroke: var(--accent); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.4s ease; }
         .service-card:hover .service-icon { background: var(--accent); transform: scale(1.1); }
         .service-card:hover .service-icon svg { stroke: var(--cream-light); }
-        .service-title { font-family: var(--font-display); font-size: 22px; font-weight: 500; color: var(--text-primary); margin-bottom: 10px; }
-        .service-includes { font-size: 12px; color: var(--accent); font-weight: 500; margin-bottom: 14px; font-style: italic; }
-        .service-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.7; font-weight: 300; }
+        .service-title { font-family: var(--font-display); font-size: 24px; font-weight: 500; color: var(--text-primary); margin-bottom: 10px; }
+        .service-includes { font-size: 14px; color: var(--accent); font-weight: 500; margin-bottom: 14px; font-style: italic; }
+        .service-desc { font-size: 15px; color: var(--text-secondary); line-height: 1.7; font-weight: 300; }
         .service-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
-        .service-tag { font-size: 11px; font-weight: 500; color: var(--text-light); background: var(--bg); padding: 6px 14px; border-radius: 20px; }
+        .service-tag { font-size: 12px; font-weight: 500; color: var(--text-light); background: var(--bg); padding: 6px 14px; border-radius: 20px; }
 
         /* INDIVIDUAL */
         .individual-section { background: var(--cream); overflow: hidden; }
@@ -208,7 +211,7 @@
         .individual-image-main img { width: 100%; height: 520px; object-fit: cover; }
         .individual-image-badge { position: absolute; bottom: 24px; left: 24px; background: var(--accent); color: var(--cream-light); padding: 14px 24px; border-radius: var(--radius-sm); box-shadow: var(--shadow-md); animation: float 5s ease-in-out infinite; }
         .individual-image-badge span { display: block; font-family: var(--font-display); font-size: 28px; font-weight: 700; }
-        .individual-image-badge small { font-size: 11px; font-weight: 500; opacity: 0.8; }
+        .individual-image-badge small { font-size: 12px; font-weight: 500; opacity: 0.8; }
 
         /* PILLARS */
         .pillars { background: var(--bg); overflow: hidden; }
@@ -220,8 +223,8 @@
         .pillar-number { font-family: var(--font-display); font-size: 48px; font-weight: 300; color: rgba(139,79,58,0.15); line-height: 1; margin-bottom: 16px; }
         .pillar-icon-wrap { width: 48px; height: 48px; margin: 0 auto 16px; border-radius: 50%; background: rgba(139,79,58,0.08); display: flex; align-items: center; justify-content: center; }
         .pillar-icon-wrap svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-        .pillar-title { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--text-primary); margin-bottom: 10px; }
-        .pillar-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.7; font-weight: 300; }
+        .pillar-title { font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--text-primary); margin-bottom: 10px; }
+        .pillar-desc { font-size: 15px; color: var(--text-secondary); line-height: 1.7; font-weight: 300; }
 
         /* GALLERY */
         .space-section { background: var(--cream); overflow: hidden; }
@@ -260,11 +263,11 @@
         .review-stars svg { width: 14px; height: 14px; fill: var(--accent); }
         .review-text { font-family: var(--font-display); font-size: 16px; font-style: italic; color: var(--text-primary); line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
         .review-author { display: flex; justify-content: space-between; align-items: center; }
-        .review-name { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-primary); }
-        .review-date { font-size: 12px; color: var(--text-light); }
-        .review-meta { font-size: 11px; color: var(--text-light); margin-top: 4px; }
+        .review-name { font-size: 14px; font-weight: 700; color: var(--text-primary); }
+        .review-date { font-size: 13px; color: var(--text-light); }
+        .review-meta { font-size: 12px; color: var(--text-light); margin-top: 4px; }
         .reviews-source { text-align: center; margin-top: 48px; }
-        .reviews-source a { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 500; color: var(--text-secondary); padding: 12px 28px; background: var(--cream); border-radius: 50px; box-shadow: var(--shadow-sm); transition: all 0.3s var(--transition); }
+        .reviews-source a { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: var(--text-secondary); padding: 12px 28px; background: var(--cream); border-radius: 50px; box-shadow: var(--shadow-sm); transition: all 0.3s var(--transition); }
         .reviews-source a:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); color: var(--accent); }
         .reviews-source img { height: 22px; display: inline-block; }
 
@@ -276,27 +279,28 @@
         .contact-content .section-title { color: var(--cream-light); }
         .contact-content .section-title em { color: var(--accent-light); }
         .contact-desc { font-size: 16px; color: rgba(240,235,224,0.65); line-height: 1.8; margin-bottom: 32px; font-weight: 300; }
-        .contact-cta-btn { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream-light); background: var(--accent); padding: 18px 40px; border-radius: 50px; transition: all 0.4s var(--transition); box-shadow: 0 6px 25px rgba(139,79,58,0.3); margin-bottom: 40px; }
-        .contact-cta-btn:hover { background: var(--accent-dark); transform: translateY(-3px); box-shadow: 0 12px 35px rgba(139,79,58,0.4); }
-        .contact-cta-btn svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+        .contact-socials { display: flex; gap: 12px; margin-bottom: 40px; flex-wrap: wrap; }
+        .btn-outline { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: var(--cream-light); border: 1.5px solid rgba(240,235,224,0.4); padding: 12px 24px; border-radius: 50px; transition: all 0.3s ease; }
+        .btn-outline:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
+        .btn-outline svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
         .contact-info-blocks { display: flex; flex-direction: column; gap: 28px; }
-        .contact-info-block h4 { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-light); margin-bottom: 12px; }
+        .contact-info-block h4 { font-size: 12px; font-weight: 600; color: var(--accent-light); margin-bottom: 12px; }
         .contact-info-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-        .contact-info-list li { display: flex; align-items: center; gap: 12px; font-size: 14px; color: rgba(240,235,224,0.7); font-weight: 300; }
+        .contact-info-list li { display: flex; align-items: center; gap: 12px; font-size: 15px; color: rgba(240,235,224,0.7); font-weight: 300; }
         .contact-info-list li svg { width: 18px; height: 18px; stroke: var(--accent-light); fill: none; stroke-width: 1.5; flex-shrink: 0; stroke-linecap: round; stroke-linejoin: round; }
         .contact-info-list li a { color: rgba(240,235,224,0.7); transition: color 0.3s ease; }
         .contact-info-list li a:hover { color: var(--accent-light); }
         .contact-image { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-xl); }
         .contact-image img { width: 100%; height: 500px; object-fit: cover; }
         .contact-schedule-badge { position: absolute; top: 24px; right: 24px; background: rgba(44,36,24,0.8); backdrop-filter: blur(10px); padding: 18px 24px; border-radius: var(--radius-sm); box-shadow: var(--shadow-md); }
-        .contact-schedule-badge h5 { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-light); margin-bottom: 6px; }
-        .contact-schedule-badge p { font-size: 14px; color: rgba(240,235,224,0.8); font-weight: 500; }
-        .contact-schedule-badge small { font-size: 12px; color: rgba(240,235,224,0.5); display: block; margin-top: 4px; }
+        .contact-schedule-badge h5 { font-size: 11px; color: var(--accent-light); margin-bottom: 6px; }
+        .contact-schedule-badge p { font-size: 15px; color: rgba(240,235,224,0.8); font-weight: 500; }
+        .contact-schedule-badge small { font-size: 13px; color: rgba(240,235,224,0.5); display: block; margin-top: 4px; }
 
         .footer { background: #1e1a12; padding: 36px 0; }
         .footer-inner { max-width: 1240px; margin: 0 auto; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; }
-        .footer-copy { font-size: 13px; color: rgba(240,235,224,0.35); }
-        .footer-credit { font-size: 12px; color: rgba(240,235,224,0.25); }
+        .footer-copy { font-size: 14px; color: rgba(240,235,224,0.35); }
+        .footer-credit { font-size: 13px; color: rgba(240,235,224,0.25); }
         .footer-credit a { color: rgba(240,235,224,0.4); transition: color 0.3s ease; }
         .footer-credit a:hover { color: var(--accent-light); }
 
@@ -314,6 +318,7 @@
             .group-image-main img { height: 380px; }
             .contact-image img { height: 380px; }
             .food-images { order: -1; }
+            .btn-primary, .btn-secondary, .nav-cta { padding: 14px 24px; font-size: 13px; }
         }
         @media (max-width: 768px) {
             .nav-links { display: none; }
@@ -333,7 +338,7 @@
             .nav-logo-subtitle { display: none; }
         }
         @media (max-width: 480px) {
-            .hero-actions { flex-direction: column; align-items: flex-start; }
+            .hero-actions { flex-direction: column; align-items: stretch; }
             .gallery-grid { grid-template-columns: 1fr 1fr; }
             .about-credentials { flex-direction: column; gap: 20px; }
         }
@@ -343,12 +348,10 @@
 </head>
 <body>
 
-<!-- Hidden SVG symbols -->
 <svg style="display:none">
     <symbol id="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"/></symbol>
 </svg>
 
-<!-- NAV -->
 <nav class="nav" id="nav">
     <div class="nav-inner">
         <a href="#hero" class="nav-logo" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'});">
@@ -366,7 +369,7 @@
             <li><a href="#group">Ομαδικές συναντήσεις</a></li>
             <li><a href="#individual">Ατομικές συνεδρίες</a></li>
             <li><a href="#contact">Επικοινωνία</a></li>
-            <li><a href="#contact" class="nav-cta">ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ</a></li>
+            <li><a href="#contact" class="nav-cta">Κλείστε ραντεβού</a></li>
         </ul>
         <div class="nav-burger" id="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
     </div>
@@ -380,7 +383,6 @@
     <a href="#contact" onclick="closeMenu()" style="color:var(--accent);">Κλείστε ραντεβού</a>
 </div>
 
-<!-- HERO -->
 <section class="hero" id="hero">
     <div class="hero-bg"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/4.jpg?raw=true" alt="Χώρος θεραπείας" onload="this.classList.add('loaded')"></div>
     <div class="hero-overlay"></div>
@@ -390,12 +392,12 @@
     <div class="hero-float-element hero-float-3"></div>
     <div class="hero-content">
         <div class="hero-text">
-            <div class="hero-badge"><span class="hero-badge-line"></span>ΠΡΟΣΩΠΟΚΕΝΤΡΙΚΗ ΨΥΧΟΘΕΡΑΠΕΙΑ</div>
-            <h1 class="hero-title">Μία Συνάντηση<br><em>Αυθεντικότητας</em><br>και Αποδοχής</h1>
+            <div class="hero-badge"><span class="hero-badge-line"></span>Προσωποκεντρική ψυχοθεραπεία</div>
+            <h1 class="hero-title">Μία συνάντηση<br><em>αυθεντικότητας</em><br>και αποδοχής</h1>
             <p class="hero-subtitle">Food in Therapy &mdash; το τραπέζι ως μία ανθρώπινη αφετηρία συνάντησης</p>
             <p class="hero-desc">Ένας ασφαλής χώρος στο Παγκράτι, όπου η θεραπευτική σχέση γίνεται ο πυρήνας της αλλαγής. Αγκαλιάστε όλα σας τα κομμάτια σε ένα περιβάλλον πλήρους αποδοχής.</p>
             <div class="hero-actions">
-                <a href="#contact" class="btn-primary">ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                <a href="#contact" class="btn-primary">Πάρε μια πρώτη γνωριμία — δωρεάν <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
                 <a href="#about" class="btn-secondary">Γνωρίστε μας</a>
             </div>
         </div>
@@ -403,7 +405,6 @@
     <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
 </section>
 
-<!-- ABOUT -->
 <section class="about section" id="about">
     <div class="section-container">
         <div class="about-grid">
@@ -416,10 +417,8 @@
                 <div class="section-label">Για εμένα</div>
                 <h2 class="section-title">Χριστόφορος<br><em>Παπαφιλίππου</em> (MSc)</h2>
                 <p class="section-subtitle">Ψυχοθεραπευτής - Σύμβουλος Ψυχικής Υγείας</p>
-                <p class="about-text" style="margin-top:24px;">Ο Χριστόφορος Παπαφιλίππου είναι κάτοχος μεταπτυχιακού τίτλου στην Προσωποκεντρική Συμβουλευτική και Ψυχοθεραπεία από το University of Strathclyde της Σκωτίας. Διατηρεί ιδιωτικό γραφείο στο Παγκράτι, ενώ προσφέρει τις υπηρεσίες του και διαδικτυακά.</p>
-                <p class="about-text">Η προσέγγισή του βασίζεται στη θεωρία του Carl Rogers, όπου η θεραπευτική σχέση δεν είναι απλώς ένα μέσο, αλλά ο ίδιος ο πυρήνας της αλλαγής. Η θεραπεία είναι μία ισότιμη συνάντηση όπου ο θεραπευόμενος μπορεί να φέρει όλα του τα κομμάτια σε ένα περιβάλλον πλήρους ασφάλειας, αποδοχής και ενσυναίσθησης.</p>
+                <p class="about-text" style="margin-top:24px;">Ονομάζομαι Χριστόφορος Παπαφιλίππου και είμαι ψυχοθεραπευτής με MSc Προσωποκεντρική Συμβουλευτική και Ψυχοθεραπεία από το University of Strathclyde. Δουλεύω μέσα από μια σχέση ισότητας, αποδοχής και αυθεντικότητας — όπου ο κάθε άνθρωπος μπορεί να φέρει τον εαυτό του όπως είναι, χωρίς πίεση ή προσδοκίες.</p>
                 <div class="about-quote">Η θεραπεία δεν είναι μία διαδικασία "διόρθωσης". Είναι μία ισότιμη συνάντηση όπου κάθε κομμάτι σας είναι ευπρόσδεκτο.</div>
-                <p class="about-text">Με εμπειρία στην υποστήριξη εφήβων και ενηλίκων, καθώς και εθελοντική δράση στο Δίκτυο "Συν-Ύπαρξη", στέκεται δίπλα στον άνθρωπο ως συνοδοιπόρος. Στόχος του είναι να δημιουργήσει τις κατάλληλες συνθήκες ώστε η θεραπευτική αλλαγή να αναδυθεί φυσικά και αυθεντικά από μέσα σας.</p>
                 <div class="about-credentials">
                     <div class="credential">
                         <div class="credential-icon"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg></div>
@@ -435,15 +434,17 @@
     </div>
 </section>
 
-<!-- FOOD IN THERAPY -->
 <section class="food-section section" id="foodintherapy">
     <div class="grain-overlay"></div>
     <div class="section-container">
         <div class="food-grid">
             <div class="food-content reveal-left">
                 <div class="section-label">Food in Therapy</div>
-                <h2 class="section-title">Μία <em>Ανθρώπινη</em><br>Αφετηρία</h2>
-                <p class="food-text">Γιατί το φαγητό έχει θέση στη θεραπεία; Η ιδέα του Food in Therapy γεννήθηκε από την προσωπική ανάγκη για έκφραση, φροντίδα και σύνδεση μέσω της μαγειρικής. Στις ομαδικές συναντήσεις του Χριστόφορου, η διαδικασία ξεκινά με σπιτικό φαγητό.</p>
+                <h2 class="section-title">Μία <em>ανθρώπινη αφετηρία συνάντησης</em></h2>
+                <p class="food-text">Από τις απαρχές του πολιτισμού, το τραπέζι ήταν τόπος συνάντησης, μοιράσματος, σύνδεσης και γέλιου. Δεν είναι θεραπεία από μόνο του — είναι μια ανθρώπινη αφετηρία, ένα ασφαλές πλαίσιο μέσα στο οποίο μπορεί να αναπτυχθεί ο διάλογος και η θεραπευτική σχέση.</p>
+                <p class="food-text">Η ιδέα γεννήθηκε από την αγάπη μου για τη μαγειρική και την προσφορά της στους ανθρώπους μου. Μεγαλώνοντας δυσκολευόμουν να εκφραστώ συναισθηματικά — η μαγειρική ήταν η διέξοδος που βρήκα για να φροντίζω και να εκφράζω την αγάπη μου στους κοντινούς μου ανθρώπους.</p>
+                <p class="food-text">Η μυρωδιά του φαγητού είναι η πιο άμεση γέφυρα στη μνήμη — η όσφρηση είναι η αίσθηση που συνδέεται πιο στενά με την ανάκληση συναισθημάτων και εμπειριών. Σχεδόν νιώθω την αγκαλιά της γιαγιάς μου όποτε μυρίζω σκορδάτα κεφτεδάκια. Όταν μοιραζόμαστε τις ίδιες μυρωδιές γύρω από ένα τραπέζι, κάτι ανοίγει — μέσα μας και ανάμεσά μας.</p>
+                
                 <div class="food-features">
                     <div class="food-feature reveal">
                         <div class="food-feature-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
@@ -452,10 +453,6 @@
                     <div class="food-feature reveal" style="transition-delay:0.15s;">
                         <div class="food-feature-icon"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
                         <div class="food-feature-text"><h4>Ανθρώπινη Αφετηρία</h4><p>Το γεύμα δεν αντικαθιστά τη θεραπεία, αλλά λειτουργεί ως ασφαλές πλαίσιο που διευκολύνει τον διάλογο.</p></div>
-                    </div>
-                    <div class="food-feature reveal" style="transition-delay:0.3s;">
-                        <div class="food-feature-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-                        <div class="food-feature-text"><h4>Αυθεντικότητα</h4><p>Στο τραπέζι, η παρουσία και η ανθρώπινη επαφή προηγούνται των τεχνικών, επιτρέποντας στον καθένα να είναι ο εαυτός του.</p></div>
                     </div>
                 </div>
             </div>
@@ -469,22 +466,23 @@
     </div>
 </section>
 
-<!-- GROUP SESSIONS -->
 <section class="group-section section" id="group">
     <div class="section-container">
         <div class="group-header reveal">
             <div class="section-label">Ομαδικές συναντήσεις</div>
-            <h2 class="section-title">Ομαδικές Θεραπευτικές<br><em>Συναντήσεις</em></h2>
+            <h2 class="section-title">Ομαδικές θεραπευτικές<br><em>συναντήσεις</em></h2>
             <p class="section-subtitle">Βιωματικές ομάδες όπου η θεραπευτική διαδικασία πλαισιώνεται από ένα κοινό γεύμα.</p>
         </div>
         <div class="group-main">
             <div class="reveal-left">
-                <p class="group-description">Μέσα από αυτή τη μοναδική προσέγγιση, η ομάδα μετατρέπεται σε έναν ζωντανό οργανισμό σύνδεσης, όπου το "μοιράζεσθαι" στο τραπέζι ανοίγει τον δρόμο για το "μοιράζεσθαι" των βιωμάτων. Η διαδικασία ξεκινά με σπιτικό φαγητό που ετοιμάζει ο Χριστόφορος, δημιουργώντας ένα κλίμα ζεστασιάς και αυθεντικότητας.</p>
+                <p class="group-description">Κάθε συμμετέχων επιλέγει ένα πιάτο με συναισθηματική αξία — εγώ το μαγειρεύω. Οι συναντήσεις είναι όσες και οι συμμετέχοντες, με δυνατότητα να συνεχίσουμε με νέους κύκλους. Οι ομάδες έχουν 4–6 άτομα, κάθε συνάντηση διαρκεί περίπου 2,5 ώρες και πραγματοποιούνται στην Αθήνα. Πριν την ένταξη στην ομάδα, προηγείται μια δωρεάν ατομική γνωριμία.</p>
+                
+                <div class="cost-badge">Κόστος: 60€ ανά συνάντηση</div>
+
                 <div class="group-includes">
                     <div class="group-include-item"><div class="group-include-icon"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 1 5 5v3H7V7a5 5 0 0 1 5-5z"/><path d="M19 10H5l-1 12h16l-1-12z"/></svg></div><span class="group-include-text">Σπιτικό γεύμα ως αφετηρία σύνδεσης</span></div>
                     <div class="group-include-item"><div class="group-include-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><span class="group-include-text">Βιωματική ομαδική δυναμική</span></div>
                     <div class="group-include-item"><div class="group-include-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><span class="group-include-text">Ασφαλές πλαίσιο διαλόγου</span></div>
-                    <div class="group-include-item"><div class="group-include-icon"><svg viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div><span class="group-include-text">Συλλογική ανάπτυξη και θεραπεία</span></div>
                 </div>
             </div>
             <div class="reveal-right"><div class="group-image-main"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/2.jpg?raw=true" alt="Ομαδικές συναντήσεις" onload="this.classList.add('loaded')"></div></div>
@@ -492,12 +490,11 @@
     </div>
 </section>
 
-<!-- SERVICES -->
 <section class="services section" id="services">
     <div class="section-container">
         <div class="services-header reveal">
             <div class="section-label">Υπηρεσίες</div>
-            <h2 class="section-title">Πώς Μπορούμε<br>να <em>Βοηθήσουμε</em></h2>
+            <h2 class="section-title">Πώς μπορούμε<br>να <em>βοηθήσουμε</em></h2>
             <p class="section-subtitle">Ολοκληρωμένη υποστήριξη προσαρμοσμένη στις δικές σας ανάγκες.</p>
         </div>
         <div class="services-grid">
@@ -510,7 +507,7 @@
             </div>
             <div class="service-card reveal" style="transition-delay:0.1s;">
                 <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                <h3 class="service-title">Διαχείριση Τραύματος &amp; Κρίσεων</h3>
+                <h3 class="service-title">Δυσκολίες που μπορούμε να εξερευνήσουμε μαζί</h3>
                 <p class="service-includes">Κρίσεις πανικού · Φοβίες · Ψυχοσωματικά · Θυμός</p>
                 <p class="service-desc">Ειδικές συνεδρίες για την αντιμετώπιση βαθύτερων δυσκολιών. Η θεραπεία στηρίζεται στη σταθερή παρουσία του θεραπευτή, η οποία βοηθά στην επεξεργασία του τραύματος και στην εξισορρόπηση των έντονων συναισθημάτων μέσα από τη σχέση αποδοχής.</p>
                 <div class="service-tags"><span class="service-tag">Φόβος &amp; Πανικός</span><span class="service-tag">Τραύμα</span><span class="service-tag">Ψυχοσωματικά</span></div>
@@ -533,7 +530,6 @@
     </div>
 </section>
 
-<!-- INDIVIDUAL -->
 <section class="individual-section section" id="individual">
     <div class="section-container">
         <div class="individual-grid">
@@ -543,22 +539,23 @@
             </div>
             <div class="reveal-right">
                 <div class="section-label">Ατομικές συνεδρίες</div>
-                <h2 class="section-title">Η Πρώτη Γνωριμία<br>είναι <em>Δωρεάν</em></h2>
+                <h2 class="section-title">Η πρώτη γνωριμία<br>είναι <em>δωρεάν</em></h2>
                 <p class="section-subtitle" style="margin-bottom:24px;">Η πρώτη συνάντηση προσφέρεται δωρεάν, δίνοντας τον χώρο να δείτε εάν αυτός ο ιδιαίτερος τρόπος δουλειάς σας ταιριάζει.</p>
-                <p class="about-text">Στις ατομικές συνεδρίες, δεν υπάρχουν συνταγές ούτε έτοιμες λύσεις. Υπάρχει ένας χώρος όπου μπορείτε να είστε πλήρως ο εαυτός σας&mdash;χωρίς κριτική, χωρίς πίεση. Η αλλαγή αναδύεται φυσικά, όταν νιώσετε ότι σας ακούνε αληθινά.</p>
-                <p class="about-text">Η θεραπεία δεν βασίζεται στην "αυθεντία", αλλά στη συνάντηση δύο ανθρώπων σε ένα πλαίσιο αυθεντικότητας. Πίστη στη φυσική τάση του ανθρώπου για ανάπτυξη, όταν του προσφερθούν οι κατάλληλες συνθήκες ασφάλειας.</p>
-                <a href="#contact" class="btn-primary" style="margin-top:24px;">ΚΛΕΙΣΤΕ ΔΩΡΕΑΝ ΓΝΩΡΙΜΙΑ <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                <p class="about-text">Εσύ έχεις τη σκυτάλη, κι εγώ βρίσκομαι δίπλα σου ως συνοδοιπόρος. Δημιουργώ έναν χώρο όπου μπορείς να ακούσεις πιο καθαρά τον εαυτό σου — εμπιστεύομαι τη διαδικασία σου, τον ρυθμό σου. Όσα χρειάζονται θα φωτιστούν οργανικά, αυθεντικά, στον χρόνο τους. Είμαι εδώ για να σε ακούσω, να σε δω γι' αυτό που είσαι και να σταθώ με αποδοχή απέναντι σε όλα σου τα κομμάτια — ακόμη κι εκείνα που ίσως εσύ δυσκολεύεσαι να αγκαλιάσεις.</p>
+                
+                <div class="cost-badge">Κόστος: 40€</div>
+                <br>
+                <a href="#contact" class="btn-primary" style="margin-top:24px;">Πάρε μια πρώτη γνωριμία — δωρεάν <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- PILLARS -->
 <section class="pillars section">
     <div class="section-container">
         <div class="pillars-header reveal">
             <div class="section-label">Η βάση</div>
-            <h2 class="section-title">Οι 4 <em>Πυλώνες</em> της Προσέγγισης</h2>
+            <h2 class="section-title">Οι 4 <em>πυλώνες</em> της προσέγγισης</h2>
             <p class="section-subtitle">Αυτό που κάνει αυτή τη θεραπευτική σχέση μοναδική.</p>
         </div>
         <div class="pillars-grid">
@@ -590,37 +587,11 @@
     </div>
 </section>
 
-<!-- GALLERY -->
-<section class="space-section section" id="space">
-    <div class="section-container">
-        <div class="space-header reveal">
-            <div class="section-label">Ο χώρος &amp; οι στιγμές</div>
-            <h2 class="section-title">Ένα Περιβάλλον <em>Ζεστασιάς</em></h2>
-            <p class="section-subtitle">Εικόνες από τον χώρο μας και τις ομαδικές μας στιγμές. Πατήστε σε κάθε εικόνα για να τη δείτε σε πλήρες μέγεθος.</p>
-        </div>
-        <div class="gallery-grid">
-            <div class="gallery-item wide reveal-scale" onclick="openLightbox(this.querySelector('img').src)"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/3.jpg?raw=true" alt="Χώρος" onload="this.classList.add('loaded')"></div>
-            <div class="gallery-item reveal-scale" style="transition-delay:0.1s" onclick="openLightbox(this.querySelector('img').src)"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/66.jpg?raw=true" alt="Χώρος" onload="this.classList.add('loaded')"></div>
-            <div class="gallery-item reveal-scale" style="transition-delay:0.15s" onclick="openLightbox(this.querySelector('img').src)"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/120.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')"></div>
-            <div class="gallery-item reveal-scale" style="transition-delay:0.05s" onclick="openLightbox(this.querySelector('img').src)"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/140.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')"></div>
-            <div class="gallery-item reveal-scale" style="transition-delay:0.1s" onclick="openLightbox(this.querySelector('img').src)"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/150.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')"></div>
-            <div class="gallery-item wide reveal-scale" style="transition-delay:0.15s" onclick="openLightbox(this.querySelector('img').src)"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/160.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')"></div>
-            <div class="gallery-item reveal-scale" style="transition-delay:0.2s" onclick="openLightbox(this.querySelector('img').src)"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/170.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')"></div>
-            <div class="gallery-item reveal-scale" style="transition-delay:0.25s" onclick="openLightbox(this.querySelector('img').src)"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/180.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')"></div>
-            <div class="gallery-item reveal-scale" style="transition-delay:0.05s" onclick="openLightbox(this.querySelector('img').src)"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/190.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')"></div>
-            <div class="gallery-item reveal-scale" style="transition-delay:0.1s" onclick="openLightbox(this.querySelector('img').src)"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/200.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')"></div>
-            <div class="gallery-item reveal-scale" style="transition-delay:0.15s" onclick="openLightbox(this.querySelector('img').src)"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/210.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')"></div>
-            <div class="gallery-item reveal-scale" style="transition-delay:0.2s" onclick="openLightbox(this.querySelector('img').src)"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/230.jpg?raw=true" alt="Χριστόφορος" onload="this.classList.add('loaded')"></div>
-        </div>
-    </div>
-</section>
-
-<!-- REVIEWS -->
 <section class="reviews section" id="reviews">
     <div class="section-container">
         <div class="reviews-header reveal">
             <div class="section-label">Εμπειρίες θεραπευομένων</div>
-            <h2 class="section-title">Λόγια που μας <em>Εμπνέουν</em></h2>
+            <h2 class="section-title">Τι λένε άνθρωποι που <em>εμπιστεύτηκαν</em> τη διαδικασία</h2>
             <p class="section-subtitle">Αυθεντικές αξιολογήσεις από ανθρώπους που εμπιστεύτηκαν τον Χριστόφορο.</p>
         </div>
         <div class="reviews-row">
@@ -658,25 +629,60 @@
     </div>
 </section>
 
-<!-- CONTACT -->
+<section class="space-section section" id="space">
+    <div class="section-container">
+        <div class="space-header reveal">
+            <div class="section-label">Ο χώρος &amp; οι στιγμές</div>
+            <h2 class="section-title">Ένα περιβάλλον <em>ζεστασιάς</em></h2>
+            <p class="section-subtitle">Εικόνες από τον χώρο μας και τις ομαδικές μας στιγμές. Πατήστε σε κάθε εικόνα για να τη δείτε σε πλήρες μέγεθος.</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item wide reveal-scale" onclick="openLightbox(this.querySelector('img').src)"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/3.jpg?raw=true" alt="Χώρος" onload="this.classList.add('loaded')"></div>
+            <div class="gallery-item reveal-scale" style="transition-delay:0.1s" onclick="openLightbox(this.querySelector('img').src)"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/66.jpg?raw=true" alt="Χώρος" onload="this.classList.add('loaded')"></div>
+            <div class="gallery-item reveal-scale" style="transition-delay:0.15s" onclick="openLightbox(this.querySelector('img').src)"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/120.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')"></div>
+            <div class="gallery-item reveal-scale" style="transition-delay:0.05s" onclick="openLightbox(this.querySelector('img').src)"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/140.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')"></div>
+            <div class="gallery-item reveal-scale" style="transition-delay:0.1s" onclick="openLightbox(this.querySelector('img').src)"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/150.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')"></div>
+            <div class="gallery-item wide reveal-scale" style="transition-delay:0.15s" onclick="openLightbox(this.querySelector('img').src)"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/160.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')"></div>
+            <div class="gallery-item reveal-scale" style="transition-delay:0.2s" onclick="openLightbox(this.querySelector('img').src)"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/170.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')"></div>
+            <div class="gallery-item reveal-scale" style="transition-delay:0.25s" onclick="openLightbox(this.querySelector('img').src)"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/180.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')"></div>
+            <div class="gallery-item reveal-scale" style="transition-delay:0.05s" onclick="openLightbox(this.querySelector('img').src)"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/190.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')"></div>
+            <div class="gallery-item reveal-scale" style="transition-delay:0.1s" onclick="openLightbox(this.querySelector('img').src)"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/200.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')"></div>
+            <div class="gallery-item reveal-scale" style="transition-delay:0.15s" onclick="openLightbox(this.querySelector('img').src)"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/210.jpg?raw=true" alt="Food in Therapy" onload="this.classList.add('loaded')"></div>
+            <div class="gallery-item reveal-scale" style="transition-delay:0.2s" onclick="openLightbox(this.querySelector('img').src)"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/230.jpg?raw=true" alt="Χριστόφορος" onload="this.classList.add('loaded')"></div>
+        </div>
+    </div>
+</section>
+
 <section class="contact section" id="contact">
     <div class="grain-overlay"></div>
     <div class="section-container">
         <div class="contact-grid">
             <div class="contact-content reveal-left">
                 <div class="section-label">Επικοινωνία</div>
-                <h2 class="section-title">Το Πρώτο <em>Βήμα</em><br>Ξεκινά Εδώ</h2>
-                <p class="contact-desc">Η πρώτη γνωριμία είναι δωρεάν. Επικοινωνήστε μαζί μας για να ορίσουμε τη συνάντησή σας σε ένα περιβάλλον απόλυτης αποδοχής.</p>
-                <a href="tel:+306997170432" class="contact-cta-btn">
-                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ
-                </a>
+                <h2 class="section-title">Ας <em>γνωριστούμε</em></h2>
+                <p class="contact-desc">Η πρώτη γνωριμία είναι δωρεάν. Επικοινωνήστε μαζί μου για να ορίσουμε τη συνάντησή σας σε ένα περιβάλλον απόλυτης αποδοχής.</p>
+                
+                <div class="contact-socials">
+                    <a href="tel:+306997170432" class="btn-outline">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Τηλέφωνο
+                    </a>
+                    <a href="https://wa.me/306997170432" class="btn-outline">
+                        <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                        WhatsApp
+                    </a>
+                    <a href="mailto:papafilippouc@gmail.com" class="btn-outline">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Email
+                    </a>
+                </div>
+
                 <div class="contact-info-blocks">
                     <div class="contact-info-block">
                         <h4>ΣΤΟΙΧΕΙΑ ΕΠΙΚΟΙΝΩΝΙΑΣ</h4>
                         <ul class="contact-info-list">
-                            <li><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Γραφείο: Μάρκου Μουσούρου 91, Μετς</li>
-                            <li><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Σπίτι: Προαιρεσίου 15, Παγκράτι</li>
+                            <li><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Μάρκου Μουσούρου 91, Μετς — Ατομικές συνεδρίες</li>
+                            <li><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Προαιρεσίου 15, Παγκράτι — Ομαδικές συναντήσεις</li>
                             <li><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+306997170432">+30 699 717 0432</a></li>
                             <li><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:papafilippouc@gmail.com">papafilippouc@gmail.com</a></li>
                         </ul>
@@ -684,7 +690,7 @@
                     <div class="contact-info-block">
                         <h4>ΩΡΑΡΙΟ ΛΕΙΤΟΥΡΓΙΑΣ</h4>
                         <ul class="contact-info-list">
-                            <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>ΔΕΥΤΕΡΑ - ΣΑΒΒΑΤΟ</li>
+                            <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Δευτέρα - Παρασκευή</li>
                             <li><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Κατόπιν ραντεβού</li>
                         </ul>
                     </div>
@@ -698,7 +704,7 @@
             </div>
             <div class="contact-image-wrap reveal-right" style="position:relative;">
                 <div class="contact-image"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/230.jpg?raw=true" alt="Χριστόφορος Παπαφιλίππου" onload="this.classList.add('loaded')"></div>
-                <div class="contact-schedule-badge"><h5>ΩΡΑΡΙΟ</h5><p>Δευτέρα - Σάββατο</p><small>Κατόπιν ραντεβού</small></div>
+                <div class="contact-schedule-badge"><h5>ΩΡΑΡΙΟ</h5><p>Δευτέρα - Παρασκευή</p><small>Κατόπιν ραντεβού</small></div>
             </div>
         </div>
     </div>
@@ -711,7 +717,6 @@
     </div>
 </footer>
 
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <div class="lightbox-close" onclick="closeLightbox()">&times;</div>
     <img src="" alt="Full size" id="lightboxImg" onload="this.classList.add('loaded')">

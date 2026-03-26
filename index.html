@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food in Therapy | Χριστόφορος Παπαφιλίππου - Ψυχοθεραπεία</title>
     <meta name="description" content="Προσωποκεντρική Ψυχοθεραπεία με τον Χριστόφορο Παπαφιλίππου. Ατομικές συνεδρίες, ομαδικές συναντήσεις Food in Therapy. Παγκράτι & Online.">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%238b4f3a'/%3E%3Cpath d='M30 55 Q50 35 70 55' stroke='%23f7f4ed' stroke-width='3' fill='none'/%3E%3Ccircle cx='50' cy='60' r='4' fill='%23f7f4ed'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/agelmet/PAPAFILIPPOU/refs/heads/main/dlds.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -63,9 +63,8 @@
         .nav-inner { max-width: 1340px; margin: 0 auto; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; }
         .nav-logo { display: flex; align-items: center; gap: 14px; cursor: pointer; transition: transform 0.4s var(--transition); }
         .nav-logo:hover { transform: scale(1.03); }
-        .nav-logo-circle { width: 56px; height: 56px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(139,79,58,0.3), inset 0 1px 0 rgba(255,255,255,0.15); transition: all 0.4s var(--transition); flex-shrink: 0; }
-        .nav-logo:hover .nav-logo-circle { box-shadow: 0 6px 28px rgba(139,79,58,0.4); transform: rotate(5deg); }
-        .nav-logo-circle svg { width: 26px; height: 26px; fill: none; stroke: var(--cream-light); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+        .nav-logo-circle { width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; transition: all 0.4s var(--transition); flex-shrink: 0; }
+        .nav-logo:hover .nav-logo-circle { transform: rotate(5deg); }
         .nav-logo-text { display: flex; flex-direction: column; line-height: 1.2; }
         .nav-logo-title { font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--text-primary); letter-spacing: -0.02em; }
         .nav-logo-subtitle { font-size: 10px; letter-spacing: 0.15em; color: var(--text-light); font-weight: 500; }
@@ -164,7 +163,6 @@
         .food-images { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
         .food-img-card { border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.3); transition: transform 0.5s var(--transition); cursor: pointer; }
         .food-img-card:hover { transform: translateY(-6px) scale(1.02); }
-        /* Browser Bug Fix for Firefox overlaps: push both even children down */
         .food-img-card:nth-child(even) { transform: translateY(30px); }
         .food-img-card:nth-child(even):hover { transform: translateY(24px) scale(1.02); }
         .food-img-card img { width: 100%; height: 240px; object-fit: cover; transition: transform 0.6s var(--transition); }
@@ -299,6 +297,9 @@
 
         .footer { background: #1e1a12; padding: 36px 0; }
         .footer-inner { max-width: 1240px; margin: 0 auto; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; }
+        .footer-logo { width: 40px; height: 40px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; margin-right: 15px; }
+        .footer-logo img { width: 100%; height: 100%; object-fit: contain; }
+        .footer-content-wrap { display: flex; align-items: center; }
         .footer-copy { font-size: 14px; color: rgba(240,235,224,0.35); }
         .footer-credit { font-size: 13px; color: rgba(240,235,224,0.25); }
         .footer-credit a { color: rgba(240,235,224,0.4); transition: color 0.3s ease; }
@@ -333,6 +334,8 @@
             .pillars-grid { grid-template-columns: 1fr; }
             .gallery-grid { grid-template-columns: repeat(2, 1fr); }
             .footer-inner { flex-direction: column; gap: 12px; text-align: center; }
+            .footer-content-wrap { flex-direction: column; gap: 8px; }
+            .footer-logo { margin-right: 0; margin-bottom: 8px; }
             .about-image-accent { width: 140px; height: 140px; bottom: -20px; right: -10px; }
             .food-img-card img { height: 160px; }
             .nav-logo-subtitle { display: none; }
@@ -356,7 +359,7 @@
     <div class="nav-inner">
         <a href="#hero" class="nav-logo" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'});">
             <div class="nav-logo-circle">
-                <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                <img src="https://raw.githubusercontent.com/agelmet/PAPAFILIPPOU/refs/heads/main/dlds.png" alt="Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
             </div>
             <div class="nav-logo-text">
                 <span class="nav-logo-title">Food in Therapy</span>
@@ -369,7 +372,7 @@
             <li><a href="#group">Ομαδικές συναντήσεις</a></li>
             <li><a href="#individual">Ατομικές συνεδρίες</a></li>
             <li><a href="#contact">Επικοινωνία</a></li>
-            <li><a href="#contact" class="nav-cta">Κλείστε ραντεβού</a></li>
+            <li><a href="#contact" class="nav-cta">Κλείσε ραντεβού</a></li>
         </ul>
         <div class="nav-burger" id="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
     </div>
@@ -380,7 +383,7 @@
     <a href="#group" onclick="closeMenu()">Ομαδικές συναντήσεις</a>
     <a href="#individual" onclick="closeMenu()">Ατομικές συνεδρίες</a>
     <a href="#contact" onclick="closeMenu()">Επικοινωνία</a>
-    <a href="#contact" onclick="closeMenu()" style="color:var(--accent);">Κλείστε ραντεβού</a>
+    <a href="#contact" onclick="closeMenu()" style="color:var(--accent);">Κλείσε ραντεβού</a>
 </div>
 
 <section class="hero" id="hero">
@@ -395,10 +398,10 @@
             <div class="hero-badge"><span class="hero-badge-line"></span>Προσωποκεντρική ψυχοθεραπεία</div>
             <h1 class="hero-title">Μία συνάντηση<br><em>αυθεντικότητας</em><br>και αποδοχής</h1>
             <p class="hero-subtitle">Food in Therapy &mdash; το τραπέζι ως μία ανθρώπινη αφετηρία συνάντησης</p>
-            <p class="hero-desc">Ένας ασφαλής χώρος στο Παγκράτι, όπου η θεραπευτική σχέση γίνεται ο πυρήνας της αλλαγής. Αγκαλιάστε όλα σας τα κομμάτια σε ένα περιβάλλον πλήρους αποδοχής.</p>
+            <p class="hero-desc">Ένας ασφαλής χώρος στο Παγκράτι, όπου η θεραπευτική σχέση γίνεται ο πυρήνας της αλλαγής. Αγκάλιασε όλα σου τα κομμάτια σε ένα περιβάλλον πλήρους αποδοχής.</p>
             <div class="hero-actions">
                 <a href="#contact" class="btn-primary">Πάρε μια πρώτη γνωριμία — δωρεάν <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                <a href="#about" class="btn-secondary">Γνωρίστε μας</a>
+                <a href="#about" class="btn-secondary">Γνώρισέ με</a>
             </div>
         </div>
     </div>
@@ -418,7 +421,7 @@
                 <h2 class="section-title">Χριστόφορος<br><em>Παπαφιλίππου</em> (MSc)</h2>
                 <p class="section-subtitle">Ψυχοθεραπευτής - Σύμβουλος Ψυχικής Υγείας</p>
                 <p class="about-text" style="margin-top:24px;">Ονομάζομαι Χριστόφορος Παπαφιλίππου και είμαι ψυχοθεραπευτής με MSc Προσωποκεντρική Συμβουλευτική και Ψυχοθεραπεία από το University of Strathclyde. Δουλεύω μέσα από μια σχέση ισότητας, αποδοχής και αυθεντικότητας — όπου ο κάθε άνθρωπος μπορεί να φέρει τον εαυτό του όπως είναι, χωρίς πίεση ή προσδοκίες.</p>
-                <div class="about-quote">Η θεραπεία δεν είναι μία διαδικασία "διόρθωσης". Είναι μία ισότιμη συνάντηση όπου κάθε κομμάτι σας είναι ευπρόσδεκτο.</div>
+                <div class="about-quote">Η θεραπεία δεν είναι μία διαδικασία "διόρθωσης". Είναι μία ισότιμη συνάντηση όπου κάθε κομμάτι σου είναι ευπρόσδεκτο.</div>
                 <div class="about-credentials">
                     <div class="credential">
                         <div class="credential-icon"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg></div>
@@ -494,15 +497,15 @@
     <div class="section-container">
         <div class="services-header reveal">
             <div class="section-label">Υπηρεσίες</div>
-            <h2 class="section-title">Πώς μπορούμε<br>να <em>βοηθήσουμε</em></h2>
-            <p class="section-subtitle">Ολοκληρωμένη υποστήριξη προσαρμοσμένη στις δικές σας ανάγκες.</p>
+            <h2 class="section-title">Πώς μπορώ<br>να σε <em>βοηθήσω</em></h2>
+            <p class="section-subtitle">Ολοκληρωμένη υποστήριξη προσαρμοσμένη στις δικές σου ανάγκες.</p>
         </div>
         <div class="services-grid">
             <div class="service-card reveal">
                 <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 3-2 5.5-4 7.5S12 20 12 22c0-2-1-2.5-3-4.5S5 12 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2"/></svg></div>
                 <h3 class="service-title">Ατομική Προσωποκεντρική Ψυχοθεραπεία</h3>
                 <p class="service-includes">Ενήλικες &amp; Έφηβοι · Άγχος · Στρες · Θλίψη · Burnout</p>
-                <p class="service-desc">Στις ατομικές συνεδρίες (60 λεπτών), ο θεραπευόμενος διερευνά τις σκέψεις και τα συναισθήματά του με τον δικό του ρυθμό. Η προσέγγιση είναι μη-κατευθυντική, προσφέροντας υποστήριξη με στόχο να ακούσετε πιο καθαρά την εσωτερική σας φωνή.</p>
+                <p class="service-desc">Στις ατομικές συνεδρίες (60 λεπτών), ο θεραπευόμενος διερευνά τις σκέψεις και τα συναισθήματά του με τον δικό του ρυθμό. Η προσέγγιση είναι μη-κατευθυντική, προσφέροντας υποστήριξη με στόχο να ακούσεις πιο καθαρά την εσωτερική σου φωνή.</p>
                 <div class="service-tags"><span class="service-tag">Συνεδρία 60'</span><span class="service-tag">Αυτογνωσία</span><span class="service-tag">Ανθεκτικότητα</span></div>
             </div>
             <div class="service-card reveal" style="transition-delay:0.1s;">
@@ -540,7 +543,7 @@
             <div class="reveal-right">
                 <div class="section-label">Ατομικές συνεδρίες</div>
                 <h2 class="section-title">Η πρώτη γνωριμία<br>είναι <em>δωρεάν</em></h2>
-                <p class="section-subtitle" style="margin-bottom:24px;">Η πρώτη συνάντηση προσφέρεται δωρεάν, δίνοντας τον χώρο να δείτε εάν αυτός ο ιδιαίτερος τρόπος δουλειάς σας ταιριάζει.</p>
+                <p class="section-subtitle" style="margin-bottom:24px;">Η πρώτη συνάντηση προσφέρεται δωρεάν, δίνοντας τον χώρο να δείτε εάν αυτός ο ιδιαίτερος τρόπος δουλειάς σου ταιριάζει.</p>
                 <p class="about-text">Εσύ έχεις τη σκυτάλη, κι εγώ βρίσκομαι δίπλα σου ως συνοδοιπόρος. Δημιουργώ έναν χώρο όπου μπορείς να ακούσεις πιο καθαρά τον εαυτό σου — εμπιστεύομαι τη διαδικασία σου, τον ρυθμό σου. Όσα χρειάζονται θα φωτιστούν οργανικά, αυθεντικά, στον χρόνο τους. Είμαι εδώ για να σε ακούσω, να σε δω γι' αυτό που είσαι και να σταθώ με αποδοχή απέναντι σε όλα σου τα κομμάτια — ακόμη κι εκείνα που ίσως εσύ δυσκολεύεσαι να αγκαλιάσεις.</p>
                 
                 <div class="cost-badge">Κόστος: 40€</div>
@@ -581,7 +584,7 @@
                 <div class="pillar-number">04</div>
                 <div class="pillar-icon-wrap"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
                 <h3 class="pillar-title">Πρώτη Γνωριμία Δωρεάν</h3>
-                <p class="pillar-desc">Η πρώτη συνάντηση προσφέρεται δωρεάν, δίνοντας τον χώρο να δείτε εάν αυτός ο τρόπος δουλειάς σας ταιριάζει.</p>
+                <p class="pillar-desc">Η πρώτη συνάντηση προσφέρεται δωρεάν, δίνοντας τον χώρο να δείτε εάν αυτός ο τρόπος δουλειάς σου ταιριάζει.</p>
             </div>
         </div>
     </div>
@@ -592,7 +595,6 @@
         <div class="reviews-header reveal">
             <div class="section-label">Εμπειρίες θεραπευομένων</div>
             <h2 class="section-title">Τι λένε άνθρωποι που <em>εμπιστεύτηκαν</em> τη διαδικασία</h2>
-            <p class="section-subtitle">Αυθεντικές αξιολογήσεις από ανθρώπους που εμπιστεύτηκαν τον Χριστόφορο.</p>
         </div>
         <div class="reviews-row">
             <div class="review-card reveal">
@@ -634,7 +636,7 @@
         <div class="space-header reveal">
             <div class="section-label">Ο χώρος &amp; οι στιγμές</div>
             <h2 class="section-title">Ένα περιβάλλον <em>ζεστασιάς</em></h2>
-            <p class="section-subtitle">Εικόνες από τον χώρο μας και τις ομαδικές μας στιγμές. Πατήστε σε κάθε εικόνα για να τη δείτε σε πλήρες μέγεθος.</p>
+            <p class="section-subtitle">Εικόνες από τον χώρο μου και τις ομαδικές μου στιγμές. Πατήστε σε κάθε εικόνα για να τη δείτε σε πλήρες μέγεθος.</p>
         </div>
         <div class="gallery-grid">
             <div class="gallery-item wide reveal-scale" onclick="openLightbox(this.querySelector('img').src)"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/3.jpg?raw=true" alt="Χώρος" onload="this.classList.add('loaded')"></div>
@@ -660,7 +662,7 @@
             <div class="contact-content reveal-left">
                 <div class="section-label">Επικοινωνία</div>
                 <h2 class="section-title">Ας <em>γνωριστούμε</em></h2>
-                <p class="contact-desc">Η πρώτη γνωριμία είναι δωρεάν. Επικοινωνήστε μαζί μου για να ορίσουμε τη συνάντησή σας σε ένα περιβάλλον απόλυτης αποδοχής.</p>
+                <p class="contact-desc">Η πρώτη γνωριμία είναι δωρεάν. Επικοινώνησε μαζί μου για να ορίσουμε τη συνάντησή σου σε ένα περιβάλλον αποδοχής.</p>
                 
                 <div class="contact-socials">
                     <a href="tel:+306997170432" class="btn-outline">
@@ -695,7 +697,7 @@
                         </ul>
                     </div>
                     <div class="contact-info-block">
-                        <h4>ΒΡΕΙΤΕ ΜΑΣ ONLINE</h4>
+                        <h4>ΒΡΕΣ ΜΕ ONLINE</h4>
                         <ul class="contact-info-list">
                             <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><a href="https://www.doctoranytime.gr/d/Symvoulos-psychikis-ygeias/papafilippou-xristoforos" target="_blank" rel="noopener">Doctoranytime προφίλ</a></li>
                         </ul>
@@ -712,7 +714,12 @@
 
 <footer class="footer">
     <div class="footer-inner">
-        <span class="footer-copy">&copy; 2026 Food in Therapy &mdash; Χριστόφορος Παπαφιλίππου. Όλα τα δικαιώματα διατηρούνται.</span>
+        <div class="footer-content-wrap">
+            <div class="footer-logo">
+                <img src="https://raw.githubusercontent.com/agelmet/PAPAFILIPPOU/refs/heads/main/dlds.png" alt="Logo">
+            </div>
+            <span class="footer-copy">&copy; 2026 Food in Therapy &mdash; Χριστόφορος Παπαφιλίππου. Όλα τα δικαιώματα διατηρούνται.</span>
+        </div>
         <span class="footer-credit">Designed by <a href="https://advonmedia.com" target="_blank" rel="noopener">Advon Media</a></span>
     </div>
 </footer>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food in Therapy | Χριστόφορος Παπαφιλίππου - Ψυχοθεραπεία</title>
     <meta name="description" content="Προσωποκεντρική Ψυχοθεραπεία με τον Χριστόφορο Παπαφιλίππου. Ατομικές συνεδρίες, ομαδικές συναντήσεις Food in Therapy. Παγκράτι & Online.">
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/agelmet/PAPAFILIPPOU/refs/heads/main/dlds.png">
+    <link rel="icon" type="image/jpeg" href="https://github.com/agelmet/PAPAFILIPPOU/blob/main/32232.jpg?raw=true">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -35,7 +35,8 @@
             --transition: cubic-bezier(0.23, 1, 0.32, 1);
         }
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+        /* Increased scroll padding so background of previous section doesn't bleed in */
+        html { scroll-behavior: smooth; scroll-padding-top: 130px; }
         body { font-family: var(--font-body); background: var(--bg); color: var(--text-primary); line-height: 1.7; font-weight: 400; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
         img { max-width: 100%; display: block; }
         a { text-decoration: none; color: inherit; }
@@ -65,22 +66,34 @@
         .nav-logo:hover { transform: scale(1.03); }
         .nav-logo-circle { width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; transition: all 0.4s var(--transition); flex-shrink: 0; }
         .nav-logo:hover .nav-logo-circle { transform: rotate(5deg); }
+        .nav-logo-circle img { border-radius: 50%; width: 100%; height: 100%; object-fit: contain; }
         .nav-logo-text { display: flex; flex-direction: column; line-height: 1.2; }
         .nav-logo-title { font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--text-primary); letter-spacing: -0.02em; }
         .nav-logo-subtitle { font-size: 10px; letter-spacing: 0.15em; color: var(--text-light); font-weight: 500; }
+        
         .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
         .nav-links a { font-size: 13px; font-weight: 600; letter-spacing: 0.05em; color: var(--text-secondary); position: relative; padding: 6px 0; transition: color 0.3s ease; }
         .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1.5px; background: var(--accent); transition: width 0.4s var(--transition); }
         .nav-links a:hover { color: var(--accent); }
         .nav-links a:hover::after { width: 100%; }
-        .nav-cta { font-size: 13px; font-weight: 600; letter-spacing: 0.05em; color: var(--cream-light) !important; background: var(--accent); padding: 14px 30px; border-radius: 50px; transition: all 0.4s var(--transition); box-shadow: 0 4px 15px rgba(139,79,58,0.25); text-align: center; }
+        
+        /* Increased padding/margins for buttons */
+        .nav-cta { font-size: 13px; font-weight: 600; letter-spacing: 0.05em; color: var(--cream-light) !important; background: var(--accent); padding: 16px 34px; border-radius: 50px; transition: all 0.4s var(--transition); box-shadow: 0 4px 15px rgba(139,79,58,0.25); text-align: center; }
         .nav-cta::after { display: none !important; }
         .nav-cta:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(139,79,58,0.35); }
-        .nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; z-index: 1001; }
+        
+        .nav-mobile-actions { display: none; align-items: center; gap: 16px; }
+        .mobile-only { display: none; }
+
+        .nav-burger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; z-index: 1001; }
         .nav-burger span { width: 26px; height: 2px; background: var(--text-primary); border-radius: 2px; transition: all 0.3s ease; }
         .nav-burger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
         .nav-burger.active span:nth-child(2) { opacity: 0; }
         .nav-burger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+        
+        /* Hide burger on desktop natively */
+        @media (min-width: 769px) { .nav-burger { display: none; } }
+
         .mobile-menu { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(228,220,200,0.97); backdrop-filter: blur(30px); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
         .mobile-menu.active { display: flex; }
         .mobile-menu a { font-family: var(--font-display); font-size: 32px; font-weight: 500; color: var(--text-primary); transition: color 0.3s ease; }
@@ -100,12 +113,14 @@
         .hero-title em { font-style: italic; color: var(--accent-light); font-weight: 400; }
         .hero-subtitle { font-family: var(--font-display); font-size: clamp(16px, 2vw, 22px); font-weight: 300; font-style: italic; color: rgba(240,235,224,0.7); margin-bottom: 28px; line-height: 1.5; }
         .hero-desc { font-size: 16px; color: rgba(240,235,224,0.6); line-height: 1.8; margin-bottom: 40px; font-weight: 300; }
+        
         .hero-actions { display: flex; gap: 16px; justify-content: flex-end; flex-wrap: wrap; animation: fadeInUp 1s ease both; animation-delay: 1s; }
-        .btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; color: var(--cream-light); background: var(--accent); padding: 16px 36px; border-radius: 50px; transition: all 0.4s var(--transition); box-shadow: 0 6px 25px rgba(139,79,58,0.3); text-align: center; }
+        .btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; color: var(--cream-light); background: var(--accent); padding: 18px 42px; border-radius: 50px; transition: all 0.4s var(--transition); box-shadow: 0 6px 25px rgba(139,79,58,0.3); text-align: center; }
         .btn-primary:hover { background: var(--accent-dark); transform: translateY(-3px); box-shadow: 0 12px 35px rgba(139,79,58,0.4); }
         .btn-primary svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-        .btn-secondary { display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; color: var(--cream-light); padding: 16px 36px; border-radius: 50px; border: 1.5px solid rgba(240,235,224,0.3); transition: all 0.4s var(--transition); text-align: center; }
+        .btn-secondary { display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; color: var(--cream-light); padding: 18px 42px; border-radius: 50px; border: 1.5px solid rgba(240,235,224,0.3); transition: all 0.4s var(--transition); text-align: center; }
         .btn-secondary:hover { background: rgba(240,235,224,0.1); border-color: rgba(240,235,224,0.6); transform: translateY(-2px); }
+        
         .hero-float-element { position: absolute; z-index: 2; border-radius: 50%; animation: float 6s ease-in-out infinite; }
         .hero-float-1 { width: 120px; height: 120px; background: radial-gradient(circle, rgba(139,79,58,0.15) 0%, transparent 70%); top: 20%; left: 8%; }
         .hero-float-2 { width: 80px; height: 80px; background: radial-gradient(circle, rgba(166,105,79,0.12) 0%, transparent 70%); bottom: 25%; left: 15%; animation-delay: 2s; }
@@ -123,8 +138,10 @@
         .section-subtitle { font-size: 16px; color: var(--text-secondary); line-height: 1.7; max-width: 580px; font-weight: 300; }
         .grain-overlay { position: absolute; inset: 0; opacity: 0.03; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); pointer-events: none; }
         
-        /* COST BADGE */
-        .cost-badge { display: inline-flex; align-items: center; background: var(--accent); color: var(--cream-light); padding: 12px 24px; border-radius: var(--radius-sm); font-weight: 600; font-size: 15px; box-shadow: var(--shadow-sm); margin: 24px 0; }
+        /* COST BADGE (Now acting as a link) */
+        .cost-badge { display: inline-flex; align-items: center; gap: 10px; background: var(--accent); color: var(--cream-light); padding: 14px 28px; border-radius: 50px; font-weight: 600; font-size: 15px; box-shadow: var(--shadow-sm); margin: 24px 0; transition: all 0.3s ease; }
+        .cost-badge:hover { background: var(--accent-dark); transform: translateY(-3px); box-shadow: var(--shadow-md); color: var(--cream-light); }
+        .cost-badge svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
         /* ABOUT */
         .about { background: var(--bg); overflow: hidden; }
@@ -134,11 +151,13 @@
         .about-image-main:hover { transform: scale(1.02); }
         .about-image-main img { width: 100%; height: 560px; object-fit: cover; transition: transform 0.8s var(--transition); }
         .about-image-main:hover img { transform: scale(1.05); }
-        .about-image-accent { position: absolute; bottom: -30px; right: -30px; width: 200px; height: 200px; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-lg); border: 4px solid var(--bg); animation: float 5s ease-in-out infinite; animation-delay: 1s; }
+        /* Removed animation from accent image per request */
+        .about-image-accent { position: absolute; bottom: -30px; right: -30px; width: 200px; height: 200px; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-lg); border: 4px solid var(--bg); }
         .about-image-accent img { width: 100%; height: 100%; object-fit: cover; }
         .about-deco-circle { position: absolute; top: -20px; left: -20px; width: 100px; height: 100px; border-radius: 50%; border: 2px solid var(--accent); opacity: 0.2; animation: float 7s ease-in-out infinite; }
         .about-content .section-subtitle { max-width: 100%; margin-bottom: 24px; }
         .about-text { font-size: 16px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px; font-weight: 300; }
+        .about-quote { font-family: var(--font-display); font-size: 20px; font-style: italic; color: var(--accent); line-height: 1.6; padding: 24px 0 24px 24px; border-left: 3px solid var(--accent); margin: 32px 0; }
         .about-credentials { display: flex; gap: 40px; margin-top: 36px; flex-wrap: wrap; }
         .credential { display: flex; align-items: center; gap: 14px; }
         .credential-icon { width: 48px; height: 48px; border-radius: 50%; background: var(--cream); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm); flex-shrink: 0; }
@@ -319,11 +338,15 @@
             .group-image-main img { height: 380px; }
             .contact-image img { height: 380px; }
             .food-images { order: -1; }
-            .btn-primary, .btn-secondary, .nav-cta { padding: 14px 24px; font-size: 13px; }
+            .btn-primary, .btn-secondary { padding: 16px 28px; font-size: 13px; }
         }
         @media (max-width: 768px) {
+            /* Mobile header solid load fix */
+            .nav { background: rgba(228,220,200,0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 10px 0; box-shadow: 0 4px 30px rgba(44,36,24,0.08); }
             .nav-links { display: none; }
-            .nav-burger { display: flex; }
+            .nav-mobile-actions { display: flex; }
+            .mobile-only { display: block; padding: 12px 20px; font-size: 12px; border-radius: 50px; background: var(--accent); color: var(--cream-light); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; box-shadow: 0 4px 15px rgba(139,79,58,0.25); }
+            
             .section { padding: 80px 0; }
             .section-container { padding: 0 24px; }
             .nav-inner { padding: 0 24px; }
@@ -333,9 +356,14 @@
             .hero-badge { justify-content: flex-start; }
             .pillars-grid { grid-template-columns: 1fr; }
             .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            
             .footer-inner { flex-direction: column; gap: 12px; text-align: center; }
             .footer-content-wrap { flex-direction: column; gap: 8px; }
             .footer-logo { margin-right: 0; margin-bottom: 8px; }
+            
+            /* Move schedule badge to the bottom inside mobile view */
+            .contact-schedule-badge { top: auto; bottom: 24px; left: 24px; right: 24px; text-align: center; }
+
             .about-image-accent { width: 140px; height: 140px; bottom: -20px; right: -10px; }
             .food-img-card img { height: 160px; }
             .nav-logo-subtitle { display: none; }
@@ -344,6 +372,8 @@
             .hero-actions { flex-direction: column; align-items: stretch; }
             .gallery-grid { grid-template-columns: 1fr 1fr; }
             .about-credentials { flex-direction: column; gap: 20px; }
+            .nav-logo-text { display: none; } /* Provide space for CTA */
+            .mobile-only { padding: 10px 16px; font-size: 11px; }
         }
         img { opacity: 0; transition: opacity 0.5s ease; }
         img.loaded { opacity: 1; }
@@ -359,7 +389,7 @@
     <div class="nav-inner">
         <a href="#hero" class="nav-logo" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'});">
             <div class="nav-logo-circle">
-                <img src="https://raw.githubusercontent.com/agelmet/PAPAFILIPPOU/refs/heads/main/dlds.png" alt="Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
+                <img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/32232.jpg?raw=true" alt="Logo">
             </div>
             <div class="nav-logo-text">
                 <span class="nav-logo-title">Food in Therapy</span>
@@ -374,7 +404,10 @@
             <li><a href="#contact">Επικοινωνία</a></li>
             <li><a href="#contact" class="nav-cta">Κλείσε ραντεβού</a></li>
         </ul>
-        <div class="nav-burger" id="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+        <div class="nav-mobile-actions">
+            <a href="#contact" class="mobile-only">Κλείσε ραντεβού</a>
+            <div class="nav-burger" id="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+        </div>
     </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
@@ -400,7 +433,7 @@
             <p class="hero-subtitle">Food in Therapy &mdash; το τραπέζι ως μία ανθρώπινη αφετηρία συνάντησης</p>
             <p class="hero-desc">Ένας ασφαλής χώρος στο Παγκράτι, όπου η θεραπευτική σχέση γίνεται ο πυρήνας της αλλαγής. Αγκάλιασε όλα σου τα κομμάτια σε ένα περιβάλλον πλήρους αποδοχής.</p>
             <div class="hero-actions">
-                <a href="#contact" class="btn-primary">Πάρε μια πρώτη γνωριμία — δωρεάν <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                <a href="#contact" class="btn-primary">Κάνε μια πρώτη γνωριμία — δωρεάν <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
                 <a href="#about" class="btn-secondary">Γνώρισέ με</a>
             </div>
         </div>
@@ -480,7 +513,10 @@
             <div class="reveal-left">
                 <p class="group-description">Κάθε συμμετέχων επιλέγει ένα πιάτο με συναισθηματική αξία — εγώ το μαγειρεύω. Οι συναντήσεις είναι όσες και οι συμμετέχοντες, με δυνατότητα να συνεχίσουμε με νέους κύκλους. Οι ομάδες έχουν 4–6 άτομα, κάθε συνάντηση διαρκεί περίπου 2,5 ώρες και πραγματοποιούνται στην Αθήνα. Πριν την ένταξη στην ομάδα, προηγείται μια δωρεάν ατομική γνωριμία.</p>
                 
-                <div class="cost-badge">Κόστος: 60€ ανά συνάντηση</div>
+                <a href="https://www.doctoranytime.gr/d/Symvoulos-psychikis-ygeias/papafilippou-xristoforos" target="_blank" rel="noopener" class="cost-badge">
+                    Κόστος: 60€ ανά συνάντηση
+                    <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
 
                 <div class="group-includes">
                     <div class="group-include-item"><div class="group-include-icon"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 1 5 5v3H7V7a5 5 0 0 1 5-5z"/><path d="M19 10H5l-1 12h16l-1-12z"/></svg></div><span class="group-include-text">Σπιτικό γεύμα ως αφετηρία σύνδεσης</span></div>
@@ -505,14 +541,14 @@
                 <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 3-2 5.5-4 7.5S12 20 12 22c0-2-1-2.5-3-4.5S5 12 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2"/></svg></div>
                 <h3 class="service-title">Ατομική Προσωποκεντρική Ψυχοθεραπεία</h3>
                 <p class="service-includes">Ενήλικες &amp; Έφηβοι · Άγχος · Στρες · Θλίψη · Burnout</p>
-                <p class="service-desc">Στις ατομικές συνεδρίες (60 λεπτών), ο θεραπευόμενος διερευνά τις σκέψεις και τα συναισθήματά του με τον δικό του ρυθμό. Η προσέγγιση είναι μη-κατευθυντική, προσφέροντας υποστήριξη με στόχο να ακούσεις πιο καθαρά την εσωτερική σου φωνή.</p>
+                <p class="service-desc">Στις ατομικές συνεδρίες (60 λεπτών), διερευνάς τις σκέψεις και τα συναισθήματά σου με τον δικό σου ρυθμό. Η προσέγγιση είναι μη-κατευθυντική, προσφέροντας υποστήριξη με στόχο να ακούσεις πιο καθαρά την εσωτερική σου φωνή.</p>
                 <div class="service-tags"><span class="service-tag">Συνεδρία 60'</span><span class="service-tag">Αυτογνωσία</span><span class="service-tag">Ανθεκτικότητα</span></div>
             </div>
             <div class="service-card reveal" style="transition-delay:0.1s;">
                 <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                <h3 class="service-title">Δυσκολίες που μπορούμε να εξερευνήσουμε μαζί</h3>
+                <h3 class="service-title">Δυσκολίες που μπορώ να εξερευνήσω μαζί σου</h3>
                 <p class="service-includes">Κρίσεις πανικού · Φοβίες · Ψυχοσωματικά · Θυμός</p>
-                <p class="service-desc">Ειδικές συνεδρίες για την αντιμετώπιση βαθύτερων δυσκολιών. Η θεραπεία στηρίζεται στη σταθερή παρουσία του θεραπευτή, η οποία βοηθά στην επεξεργασία του τραύματος και στην εξισορρόπηση των έντονων συναισθημάτων μέσα από τη σχέση αποδοχής.</p>
+                <p class="service-desc">Ειδικές συνεδρίες για την αντιμετώπιση βαθύτερων δυσκολιών. Η θεραπεία στηρίζεται στη σταθερή παρουσία μου, η οποία βοηθά στην επεξεργασία του τραύματος και στην εξισορρόπηση των έντονων συναισθημάτων μέσα από τη σχέση αποδοχής.</p>
                 <div class="service-tags"><span class="service-tag">Φόβος &amp; Πανικός</span><span class="service-tag">Τραύμα</span><span class="service-tag">Ψυχοσωματικά</span></div>
             </div>
             <div class="service-card reveal" style="transition-delay:0.2s;">
@@ -526,7 +562,7 @@
                 <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
                 <h3 class="service-title">Προσβασιμότητα &amp; Online Υπηρεσίες</h3>
                 <p class="service-includes">Βιντεοκλήση · Ειδικό κόστος · Φοιτητές · Άνεργοι · ΑΜΕΑ</p>
-                <p class="service-desc">Πιστεύοντας στη συμπερίληψη, παρέχεται η δυνατότητα για διαδικτυακές συνεδρίες, ενώ διατηρείται ειδικό κόστος επίσκεψης για φοιτητές, ανέργους και ΑΜΕΑ.</p>
+                <p class="service-desc">Πιστεύοντας στη συμπερίληψη, παρέχω τη δυνατότητα για διαδικτυακές συνεδρίες, ενώ διατηρώ ειδικό κόστος επίσκεψης για φοιτητές, ανέργους και ΑΜΕΑ.</p>
                 <div class="service-tags"><span class="service-tag">Online</span><span class="service-tag">Ειδική τιμολόγηση</span></div>
             </div>
         </div>
@@ -543,12 +579,15 @@
             <div class="reveal-right">
                 <div class="section-label">Ατομικές συνεδρίες</div>
                 <h2 class="section-title">Η πρώτη γνωριμία<br>είναι <em>δωρεάν</em></h2>
-                <p class="section-subtitle" style="margin-bottom:24px;">Η πρώτη συνάντηση προσφέρεται δωρεάν, δίνοντας τον χώρο να δείτε εάν αυτός ο ιδιαίτερος τρόπος δουλειάς σου ταιριάζει.</p>
+                <p class="section-subtitle" style="margin-bottom:24px;">Η πρώτη συνάντηση προσφέρεται δωρεάν, δίνοντας τον χώρο να δεις αν ο τρόπος δουλειάς σου ταιριάζει.</p>
                 <p class="about-text">Εσύ έχεις τη σκυτάλη, κι εγώ βρίσκομαι δίπλα σου ως συνοδοιπόρος. Δημιουργώ έναν χώρο όπου μπορείς να ακούσεις πιο καθαρά τον εαυτό σου — εμπιστεύομαι τη διαδικασία σου, τον ρυθμό σου. Όσα χρειάζονται θα φωτιστούν οργανικά, αυθεντικά, στον χρόνο τους. Είμαι εδώ για να σε ακούσω, να σε δω γι' αυτό που είσαι και να σταθώ με αποδοχή απέναντι σε όλα σου τα κομμάτια — ακόμη κι εκείνα που ίσως εσύ δυσκολεύεσαι να αγκαλιάσεις.</p>
                 
-                <div class="cost-badge">Κόστος: 40€</div>
+                <a href="https://www.doctoranytime.gr/d/Symvoulos-psychikis-ygeias/papafilippou-xristoforos" target="_blank" rel="noopener" class="cost-badge">
+                    Κόστος: 40€
+                    <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
                 <br>
-                <a href="#contact" class="btn-primary" style="margin-top:24px;">Πάρε μια πρώτη γνωριμία — δωρεάν <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                <a href="#contact" class="btn-primary" style="margin-top:24px;">Κάνε μια πρώτη γνωριμία — δωρεάν <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
             </div>
         </div>
     </div>
@@ -584,7 +623,7 @@
                 <div class="pillar-number">04</div>
                 <div class="pillar-icon-wrap"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
                 <h3 class="pillar-title">Πρώτη Γνωριμία Δωρεάν</h3>
-                <p class="pillar-desc">Η πρώτη συνάντηση προσφέρεται δωρεάν, δίνοντας τον χώρο να δείτε εάν αυτός ο τρόπος δουλειάς σου ταιριάζει.</p>
+                <p class="pillar-desc">Η πρώτη συνάντηση προσφέρεται δωρεάν, δίνοντας τον χώρο να δεις αν αυτός ο τρόπος δουλειάς σου ταιριάζει.</p>
             </div>
         </div>
     </div>
@@ -636,7 +675,7 @@
         <div class="space-header reveal">
             <div class="section-label">Ο χώρος &amp; οι στιγμές</div>
             <h2 class="section-title">Ένα περιβάλλον <em>ζεστασιάς</em></h2>
-            <p class="section-subtitle">Εικόνες από τον χώρο μου και τις ομαδικές μου στιγμές. Πατήστε σε κάθε εικόνα για να τη δείτε σε πλήρες μέγεθος.</p>
+            <p class="section-subtitle">Εικόνες από τον χώρο μου και τις ομαδικές μου στιγμές. Πάτησε σε κάθε εικόνα για να τη δεις σε πλήρες μέγεθος.</p>
         </div>
         <div class="gallery-grid">
             <div class="gallery-item wide reveal-scale" onclick="openLightbox(this.querySelector('img').src)"><img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/3.jpg?raw=true" alt="Χώρος" onload="this.classList.add('loaded')"></div>
@@ -716,7 +755,7 @@
     <div class="footer-inner">
         <div class="footer-content-wrap">
             <div class="footer-logo">
-                <img src="https://raw.githubusercontent.com/agelmet/PAPAFILIPPOU/refs/heads/main/dlds.png" alt="Logo">
+                <img src="https://github.com/agelmet/PAPAFILIPPOU/blob/main/32232.jpg?raw=true" alt="Logo">
             </div>
             <span class="footer-copy">&copy; 2026 Food in Therapy &mdash; Χριστόφορος Παπαφιλίππου. Όλα τα δικαιώματα διατηρούνται.</span>
         </div>
